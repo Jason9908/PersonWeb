@@ -4,8 +4,9 @@
     <main>
       <AboutSection />
       <TimelineSection />
-      <AchievementsSection />
+      <CodingJourneySection />
       <QualitiesSection />
+      <AchievementsSection />
       <BookmarksSection />
       <SkillsSection />
       <ContactSection />
@@ -17,6 +18,7 @@
 <script setup>
 import Header from './components/Header.vue'
 import AboutSection from './components/AboutSection.vue'
+import CodingJourneySection from './components/CodingJourneySection.vue'
 import TimelineSection from './components/TimelineSection.vue'
 import AchievementsSection from './components/AchievementsSection.vue'
 import QualitiesSection from './components/QualitiesSection.vue'

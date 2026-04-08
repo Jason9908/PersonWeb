@@ -9,7 +9,10 @@
           <a href="#about" class="nav-link">关于我</a>
         </li>
         <li class="nav-item">
-          <a href="#timeline" class="nav-link">时间线</a>
+          <a href="#timeline" class="nav-link">人生大事记</a>
+        </li>
+        <li class="nav-item">
+          <a href="#coding-journey" class="nav-link">编程来时路</a>
         </li>
         <li class="nav-item">
           <a href="#achievements" class="nav-link">成就</a>

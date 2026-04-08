@@ -21,7 +21,7 @@
           <span class="contact-icon">💬</span>
           <div class="contact-info">
             <h3 class="contact-title">公众号</h3>
-            <p class="contact-value">Jasonakeke</p>
+            <p class="contact-value">柯柯的AI宝藏库</p>
             <img :src="gzhQrCode" alt="公众号" class="qrcode-image" />
           </div>
         </div>
@@ -39,13 +39,16 @@
       <div class="contact-form-wrapper">
         <form class="contact-form" @submit.prevent="handleSubmit">
           <h3>发送消息</h3>
+          <div v-if="submitStatus" :class="['status-message', submitStatus.type]">
+            {{ submitStatus.message }}
+          </div>
           <div class="form-group">
             <label for="name">姓名</label>
-            <input type="text" id="name" v-model="formData.name" placeholder="请输入您的姓名" />
+            <input type="text" id="name" v-model="formData.name" required placeholder="请输入您的姓名" :disabled="isSubmitting" />
           </div>
           <div class="form-group">
             <label for="email">邮箱</label>
-            <input type="email" id="email" v-model="formData.email" placeholder="请输入您的邮箱" />
+            <input type="email" id="email" v-model="formData.email" required placeholder="请输入您的邮箱" :disabled="isSubmitting" />
           </div>
           <div class="form-group">
             <label for="message">消息</label>
@@ -53,11 +56,13 @@
               id="message"
               v-model="formData.message"
               rows="5"
+              required
               placeholder="请输入您想说的话..."
+              :disabled="isSubmitting"
             ></textarea>
           </div>
-          <button type="submit" class="submit-btn">
-            发送消息
+          <button type="submit" class="submit-btn" :disabled="isSubmitting">
+            {{ isSubmitting ? '发送中...' : '发送消息' }}
           </button>
         </form>
       </div>
@@ -66,7 +71,7 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import wechatQrCode from '../assets/images/wechat.jpg'
 import gzhQrCode from '../assets/images/gzh.jpg'
 
@@ -76,12 +81,53 @@ const formData = reactive({
   message: ''
 })
 
-const handleSubmit = () => {
-  console.log('Form submitted:', formData)
-  alert('感谢您的留言！我会尽快回复您。')
-  formData.name = ''
-  formData.email = ''
-  formData.message = ''
+const isSubmitting = ref(false)
+const submitStatus = ref(null)
+
+const handleSubmit = async () => {
+  isSubmitting.value = true
+  submitStatus.value = null
+
+  try {
+    const response = await fetch('https://formsubmit.co/ajax/2284037977@qq.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        _subject: '来自个人网站的新消息',
+        _captcha: 'false',
+        _template: 'table'
+      })
+    })
+
+    if (response.ok) {
+      submitStatus.value = {
+        type: 'success',
+        message: '✓ 消息发送成功！我会尽快回复您。'
+      }
+      formData.name = ''
+      formData.email = ''
+      formData.message = ''
+
+      setTimeout(() => {
+        submitStatus.value = null
+      }, 5000)
+    } else {
+      throw new Error('发送失败')
+    }
+  } catch (error) {
+    submitStatus.value = {
+      type: 'error',
+      message: '✗ 发送失败，请稍后重试或直接添加微信联系'
+    }
+  } finally {
+    isSubmitting.value = false
+  }
 }
 </script>
 
@@ -205,6 +251,40 @@ const handleSubmit = () => {
   text-shadow: var(--glow-text);
 }
 
+.status-message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.status-message.success {
+  background: rgba(0, 255, 128, 0.1);
+  border: 1px solid rgba(0, 255, 128, 0.3);
+  color: #00ff80;
+  box-shadow: 0 0 15px rgba(0, 255, 128, 0.2);
+}
+
+.status-message.error {
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  color: #ff4d4d;
+  box-shadow: 0 0 15px rgba(255, 77, 77, 0.2);
+}
+
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -257,6 +337,18 @@ const handleSubmit = () => {
 .submit-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-group input:disabled,
+.form-group textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 @media (max-width: 768px) {

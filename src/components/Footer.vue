@@ -24,7 +24,7 @@
         <h3>关注我</h3>
         <ul>
           <li><a href="https://Jasonakeke.blog.csdn.net" target="_blank" rel="noopener noreferrer">CSDN: Jasonakeke</a></li>
-          <li><a href="#contact">公众号: Jasonakeke (扫码)</a></li>
+          <li><a href="#contact">公众号: 柯柯的AI宝藏库 (扫码)</a></li>
           <li><a href="#contact">微信: (扫码添加)</a></li>
         </ul>
       </div>

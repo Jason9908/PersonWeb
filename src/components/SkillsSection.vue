@@ -104,6 +104,8 @@ const services = [
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .service-card::before {
@@ -142,12 +144,18 @@ const services = [
   font-weight: 700;
   margin-bottom: 0.75rem;
   color: var(--text-dark);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .service-description {
   color: var(--text-light);
   line-height: 1.7;
   margin-bottom: 1.5rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .service-features {
@@ -161,6 +169,10 @@ const services = [
   position: relative;
   color: var(--text-dark);
   font-size: 0.95rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
 }
 
 .service-features li::before {

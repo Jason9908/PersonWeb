@@ -176,7 +176,8 @@ import avatarImage from '../assets/images/avatar.jpg'
   border-radius: 20px;
   font-size: 0.9rem;
   border: 1px solid rgba(123, 44, 191, 0.4);
-  color: var(--secondary-color);
+  color: #cd93ff;
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 

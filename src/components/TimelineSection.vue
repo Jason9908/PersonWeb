@@ -1,7 +1,7 @@
 <template>
   <section id="timeline" class="timeline">
-    <h2 class="section-title">我的人生时间线</h2>
-    <p class="section-subtitle">闷骚的野蛮生长 - 从逆境到边学边赚</p>
+    <h2 class="section-title">人生大事记</h2>
+    <p class="section-subtitle">从逆境重生到边学边赚 - 记录人生重要里程碑</p>
     <div class="timeline-container">
       <div
         v-for="(event, index) in timelineEvents"

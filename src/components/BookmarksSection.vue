@@ -1,183 +1,88 @@
 <template>
   <section id="bookmarks" class="bookmarks">
-    <h2 class="section-title">收藏网站</h2>
-    <p class="section-subtitle">我的常用网站收藏夹</p>
+    <h2 class="section-title">我的收藏</h2>
+    <p class="section-subtitle">
+      常用学习资源、开发工具和技术社区 - 导入自浏览器收藏夹
+    </p>
 
-    <div class="bookmarks-wrapper">
-      <!-- 左侧树形文件夹 -->
-      <div class="bookmarks-tree">
-        <div class="tree-content">
-          <div class="tree-root">
-            <!-- 书签栏 -->
-            <div class="tree-item">
-              <div
-                class="tree-node folder"
-                :class="{ expanded: expandedFolders.bookmarksBar, selected: selectedFolder.id === 'bookmarksBar' }"
-                @click="toggleFolder('bookmarksBar')"
-              >
-                <span class="tree-chevron">{{ expandedFolders.bookmarksBar ? '▼' : '▶' }}</span>
-                <span class="tree-icon">📁</span>
-                <span class="tree-label">书签栏</span>
-              </div>
-              <div v-if="expandedFolders.bookmarksBar" class="tree-children">
-                <!-- 小书签栏 -->
-                <div class="tree-item">
-                  <div
-                    class="tree-node folder"
-                    :class="{ expanded: expandedFolders.smallBar, selected: selectedFolder.id === 'smallBar' }"
-                    @click="selectFolder('smallBar')"
-                  >
-                    <span class="tree-chevron">{{ expandedFolders.smallBar ? '▼' : '▶' }}</span>
-                    <span class="tree-icon">📁</span>
-                    <span class="tree-label">小书签栏</span>
-                  </div>
-                  <div v-if="expandedFolders.smallBar" class="tree-children">
-                    <div class="tree-item">
-                      <div
-                        class="tree-node folder"
-                        :class="{ selected: selectedFolder.id === 'tools' }"
-                        @click="selectFolder('tools')"
-                      >
-                        <span class="tree-icon">📁</span>
-                        <span class="tree-label">工具</span>
-                      </div>
-                    </div>
-                    <div class="tree-item">
-                      <div
-                        class="tree-node folder"
-                        :class="{ selected: selectedFolder.id === 'web' }"
-                        @click="selectFolder('web')"
-                      >
-                        <span class="tree-icon">📁</span>
-                        <span class="tree-label">网页</span>
-                      </div>
-                    </div>
-                    <div class="tree-item">
-                      <div
-                        class="tree-node folder"
-                        :class="{ selected: selectedFolder.id === 'reading' }"
-                        @click="selectFolder('reading')"
-                      >
-                        <span class="tree-icon">📁</span>
-                        <span class="tree-label">阅读</span>
-                      </div>
-                    </div>
-                    <div class="tree-item">
-                      <div
-                        class="tree-node folder"
-                        :class="{ selected: selectedFolder.id === 'text' }"
-                        @click="selectFolder('text')"
-                      >
-                        <span class="tree-icon">📁</span>
-                        <span class="tree-label">文字</span>
-                      </div>
-                    </div>
-                    <div class="tree-item">
-                      <div
-                        class="tree-node folder"
-                        :class="{ selected: selectedFolder.id === 'search' }"
-                        @click="selectFolder('search')"
-                      >
-                        <span class="tree-icon">📁</span>
-                        <span class="tree-label">搜索</span>
-                      </div>
-                    </div>
-                    <div class="tree-item">
-                      <div
-                        class="tree-node folder"
-                        :class="{ selected: selectedFolder.id === 'searchEngines' }"
-                        @click="selectFolder('searchEngines')"
-                      >
-                        <span class="tree-icon">📁</span>
-                        <span class="tree-label">搜索引擎</span>
-                      </div>
-                    </div>
-                    <div class="tree-item">
-                      <div
-                        class="tree-node folder"
-                        :class="{ selected: selectedFolder.id === 'sidebarSearch' }"
-                        @click="selectFolder('sidebarSearch')"
-                      >
-                        <span class="tree-icon">📁</span>
-                        <span class="tree-label">边栏搜索</span>
-                      </div>
-                    </div>
-                    <div class="tree-item">
-                      <div
-                        class="tree-node folder"
-                        :class="{ selected: selectedFolder.id === 'links' }"
-                        @click="selectFolder('links')"
-                      >
-                        <span class="tree-icon">📁</span>
-                        <span class="tree-label">链接</span>
-                      </div>
-                    </div>
-                    <div class="tree-item">
-                      <div
-                        class="tree-node folder"
-                        :class="{ selected: selectedFolder.id === 'images' }"
-                        @click="selectFolder('images')"
-                      >
-                        <span class="tree-icon">📁</span>
-                        <span class="tree-label">图片</span>
-                      </div>
-                    </div>
-                    <div class="tree-item">
-                      <div
-                        class="tree-node folder"
-                        :class="{ selected: selectedFolder.id === 'design' }"
-                        @click="selectFolder('design')"
-                      >
-                        <span class="tree-icon">📁</span>
-                        <span class="tree-label">设计</span>
-                      </div>
-                    </div>
-                    <div class="tree-item">
-                      <div
-                        class="tree-node folder"
-                        :class="{ selected: selectedFolder.id === 'development' }"
-                        @click="selectFolder('development')"
-                      >
-                        <span class="tree-icon">📁</span>
-                        <span class="tree-label">开发</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- 已导入 -->
-                <div class="tree-item">
-                  <div
-                    class="tree-node folder"
-                    :class="{ selected: selectedFolder.id === 'imported' }"
-                    @click="selectFolder('imported')"
-                  >
-                    <span class="tree-icon">📁</span>
-                    <span class="tree-label">已导入</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="bookmarks-layout">
+      <!-- 左侧分类列表 -->
+      <div class="category-sidebar">
+        <div
+          :class="['category-item', { active: activeCategory === 'all' }]"
+          @click="activeCategory = 'all'"
+        >
+          <span class="cat-icon">📚</span>
+          <span class="cat-name">全部</span>
+          <span class="cat-count">{{ totalCount }}</span>
+        </div>
+        <div
+          v-for="cat in categories"
+          :key="cat.id"
+          :class="['category-item', { active: activeCategory === cat.id }]"
+          @click="activeCategory = cat.id"
+        >
+          <span class="cat-icon">{{ cat.icon }}</span>
+          <span class="cat-name">{{ cat.name }}</span>
+          <span class="cat-count">{{ cat.links.length }}</span>
         </div>
       </div>
 
-      <!-- 右侧详细内容 -->
-      <div class="bookmarks-detail">
-        <div class="detail-header">
-          <h3 class="detail-title">{{ selectedFolder.name }}</h3>
-        </div>
-        <div class="detail-content">
+      <!-- 右侧内容区 -->
+      <div class="content-area">
+        <div v-if="activeCategory === 'all'" class="all-categories">
           <div
-            v-for="bookmark in selectedFolder.items"
-            :key="bookmark.url"
-            class="detail-item"
+            v-for="category in categories"
+            :key="category.id"
+            class="bookmark-category"
           >
-            <div class="detail-icon">{{ bookmark.icon }}</div>
-            <div class="detail-info">
-              <a :href="bookmark.url" target="_blank" class="detail-name">{{ bookmark.name }}</a>
-              <span class="detail-url">{{ bookmark.url }}</span>
+            <div class="category-header">
+              <span class="category-icon">{{ category.icon }}</span>
+              <h3 class="category-name">{{ category.name }}</h3>
+              <span class="category-count">{{ category.links.length }} 个</span>
             </div>
+            <ul class="bookmark-list">
+              <li v-for="(link, index) in category.links" :key="index" class="bookmark-item">
+                <a
+                  :href="link.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bookmark-link"
+                >
+                  <div class="bookmark-info">
+                    <h4 class="bookmark-name">{{ link.name }}</h4>
+                    <p class="bookmark-description">{{ link.description }}</p>
+                  </div>
+                  <span class="bookmark-arrow">→</span>
+                </a>
+              </li>
+            </ul>
           </div>
+        </div>
+
+        <div v-else class="category-detail">
+          <div class="detail-header">
+            <span class="detail-icon">{{ currentCategory.icon }}</span>
+            <h2 class="detail-title">{{ currentCategory.name }}</h2>
+            <span class="category-count">{{ currentCategory.links.length }} 个</span>
+          </div>
+
+          <ul class="bookmark-list">
+            <li v-for="(link, index) in currentCategory.links" :key="index" class="bookmark-item">
+              <a
+                :href="link.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bookmark-link"
+              >
+                <div class="bookmark-info">
+                  <h4 class="bookmark-name">{{ link.name }}</h4>
+                  <p class="bookmark-description">{{ link.description }}</p>
+                </div>
+                <span class="bookmark-arrow">→</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -185,407 +90,424 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
-const expandedFolders = ref({
-  bookmarksBar: true,
-  smallBar: true
-})
+const activeCategory = ref('learning')
 
-const selectedFolder = ref({
-  id: 'smallBar',
-  name: '小书签栏',
-  items: [
-    { name: 'Windows 12 网页版', url: 'http://p.xiaodu0.com/desktop.html', icon: '🖥️' },
-    { name: '小鹅通学员版', url: 'https://study.xiaoe-tech.com/t_l/learnIndex?type=wx#/muti_index', icon: '📚' },
-    { name: 'RunningCheese使用说明', url: 'https://www.runningcheese.com/bookmarklets', icon: '🧀' },
-    { name: '─────────────', url: 'https://separator.mayastudios.com/index.php?t=horz#', icon: '─' },
-    { name: '分隔符', url: 'https://separator.mayastudios.com/index.php?t=horz', icon: '➗' },
-    { name: '多标签搜索', url: 'https://www.runningcheese.com/multi-search', icon: '🔍' },
-    { name: '边栏搜索', url: 'https://www.runningcheese.com/sidebar-search', icon: '🔍' },
-    { name: '破局行动', url: 'https://aipoju.com/action', icon: '🎯' },
-    { name: '尚硅谷Java', url: 'https://pan.baidu.com/share/init?surl=PhTeMkX5vOg0ZRcw0abjCw&pwd=yyds', icon: '📦' },
-    { name: 'Excalidraw', url: 'https://excalidraw.com', icon: '✏️' },
-    { name: 'Google', url: 'https://www.google.com.hk/webhp?hl=zh-CN&sourceid=cnhp&gws_rd=ssl', icon: '🔍' },
-    { name: 'Adobe', url: 'https://www.adobe.com', icon: '🎨' },
-    { name: 'Java快捷键', url: 'https://blog.csdn.net/qq_40272386/article/details/80576813', icon: '⌨️' },
-    { name: 'Linux命令', url: 'https://www.linuxcool.com/?from=singlemessage', icon: '🐧' },
-    { name: 'C语言中文网', url: 'http://c.biancheng.net', icon: '📖' },
-    { name: 'Java视频', url: 'https://study.163.com/course/courseLearn.htm?courseId=343001', icon: '🎬' },
-    { name: 'Keil5', url: 'https://blog.csdn.net/cheapter/article/details/80198168', icon: '🔧' },
-    { name: 'STM', url: 'https://www.st.com/content/st_com/en.html', icon: '🔧' },
-    { name: 'Linux终端', url: 'https://mp.weixin.qq.com/s/yI6rQIVk0Z4zIXrQAiqnmQ', icon: '💻' },
-    { name: '搜狐视频', url: 'https://tv.sohu.com', icon: '📺' },
-    { name: '云栖社区', url: 'https://yq.aliyun.com', icon: '☁️' },
-    { name: '脚本之家', url: 'https://www.jb51.net', icon: '🛠️' },
-    { name: 'CSDN', url: 'https://www.csdn.net', icon: '📝' },
-    { name: 'JavaGuide', url: 'https://snailclimb.top/JavaGuide', icon: '📖' },
-    { name: 'Java程序核心知识', url: 'https://github.com/Snailclimb/JavaGuide', icon: '☕' },
-    { name: 'VMware虚拟网卡', url: 'https://blog.csdn.net/czg13548930186/article/details/77099377', icon: '🖥️' },
-    { name: '中国大学MOOC', url: 'https://www.icourse163.org', icon: '🎓' },
-    { name: 'Apache ECharts', url: 'https://www.echartsjs.com/zh/index.html', icon: '📊' },
-    { name: 'POI操作Excel', url: 'https://www.cnblogs.com/gdwkong/p/8669220.html', icon: '📊' },
-    { name: '弹幕特效代码', url: 'https://www.17sucai.com/pins/tag/11535.html', icon: '✨' },
-    { name: 'Edraw MindMaster', url: 'https://www.edrawsoft.com/en/mindmaster', icon: '🗺️' },
-    { name: 'Java EE 6教程', url: 'https://docs.oracle.com/javaee/6/tutorial/doc', icon: '📕' },
-    { name: 'Java', url: 'https://cloud.tencent.com/developer/article/1146268', icon: '☕' },
-    { name: 'VMware', url: 'https://www.vmware.com/cn.html', icon: '🖥️' },
-    { name: '牛耳', url: 'http://www.newer2001.com', icon: '🎯' },
-    { name: 'IDEA破解', url: 'https://my.oschina.net/githubhty/blog/2245788', icon: '💡' },
-    { name: 'IDEA第三方软件', url: 'https://confluence.jetbrains.com/display/IDEADEV', icon: '📦' },
-    { name: '传智播客', url: 'https://www.imooc.com/article/288330', icon: '🎓' },
-    { name: 'OSCHINA', url: 'https://www.oschina.net', icon: '🔧' },
-    { name: 'sun拼音翻页', url: 'http://blog.chinaunix.net/uid-29485627-id-4363538.html', icon: '📝' },
-    { name: '学信网', url: 'https://www.chsi.com.cn', icon: '🎓' },
-    { name: 'JavaGuide GitHub', url: 'https://github.com/Snailclimb/JavaGuide', icon: '🐙' },
-    { name: '黑马程序员', url: 'http://www.itheima.com', icon: '🐴' },
-    { name: '搜狗输入法', url: 'https://pinyin.sogou.com/linux/help.php', icon: '🔤' },
-    { name: '小米', url: 'https://account.xiaomi.com/pass/serviceLogin', icon: '📱' },
-    { name: '小米商城', url: 'https://www.mi.com/index.html', icon: '📱' },
-    { name: '后盾人', url: 'https://www.houdunren.com', icon: '🛡️' },
-    { name: 'C++资源', url: 'https://github.com/AnkerLeng/Cpp-0-1-Resource', icon: '⚙️' },
-    { name: '传智视频库', url: 'http://yun.itheima.com/?bili', icon: '🎬' },
-    { name: 'Gmail', url: 'https://mail.google.com/mail/u/0/#inbox', icon: '✉️' },
-    { name: 'Microsoft账户', url: 'https://account.microsoft.com', icon: '🪟' },
-    { name: '用户脚本', url: 'https://greasyfork.org/zh-CN/scripts', icon: '📜' },
-    { name: 'JetBrains', url: 'https://www.jetbrains.com', icon: '⚙️' },
-    { name: 'MDN文档', url: 'https://developer.mozilla.org/zh-CN', icon: '🦖' },
-    { name: 'SegmentFault', url: 'https://segmentfault.com', icon: '💡' },
-    { name: 'Stack Overflow', url: 'https://stackoverflow.com', icon: '📚' },
-    { name: '力扣', url: 'https://leetcode-cn.com', icon: '🏆' },
-    { name: '牛客网', url: 'https://www.nowcoder.com', icon: '🎯' }
-  ]
-})
-
-const folderData = {
-  smallBar: selectedFolder.value,
-  tools: {
+const categories = [
+  {
+    id: 'learning',
+    name: '编程学习',
+    icon: '📚',
+    fullDescription: '精选编程学习资源，包括CSDN、博客园、廖雪峰等知名技术博客和教程网站，涵盖Python、Java、C语言等多门编程语言。',
+    links: [
+      { name: 'CSDN', url: 'https://Jasonakeke.blog.csdn.net', description: '我的技术主场 | 全栈与IoT硬核干货' },
+      { name: '博客园', url: 'https://www.cnblogs.com', description: '老牌技术社区 | 开发者精神家园' },
+      { name: '廖雪峰', url: 'https://www.liaoxuefeng.com', description: '编程圣经 | Python/Java/Git终极教程' },
+      { name: 'C语言中文网', url: 'http://c.biancheng.net', description: 'C/C++修炼手册 | 从入门到精通' },
+      { name: 'Linux命令', url: 'https://www.linuxcool.com', description: '终端神器 | 命令速查宝典' },
+      { name: 'JavaGuide', url: 'https://snailclimb.top/JavaGuide', description: 'Java通关秘籍 | 面试收割机' }
+    ]
+  },
+  {
     id: 'tools',
-    name: '工具',
-    items: [
-      { name: '分隔符工具', url: 'https://separator.mayastudios.com/index.php?t=horz', icon: '➗' },
-      { name: '多标签搜索', url: 'https://www.runningcheese.com/multi-search', icon: '🔍' },
-      { name: '边栏搜索', url: 'https://www.runningcheese.com/sidebar-search', icon: '🔍' }
+    name: '开发工具',
+    icon: '🛠️',
+    fullDescription: '必备开发工具集合，包括GitHub、Gitee等代码托管平台，JetBrains IDE，Stack Overflow问答社区，以及MDN等权威开发文档。',
+    links: [
+      { name: 'GitHub', url: 'https://github.com', description: '全球代码宇宙 | 开源圣地' },
+      { name: 'Gitee', url: 'https://gitee.com', description: '国产代码托管 | 极速访问' },
+      { name: 'JetBrains', url: 'https://www.jetbrains.com', description: 'IDE之王 | 开发装备库' },
+      { name: 'Stack Overflow', url: 'https://stackoverflow.com', description: '程序员终极问答 | Bug终结者' },
+      { name: 'MDN Web文档', url: 'https://developer.mozilla.org', description: 'Web开发圣经 | 前端权威指南' },
+      { name: 'SegmentFault', url: 'https://segmentfault.com', description: '中文技术社区 | 思维碰撞地' }
     ]
   },
-  web: {
-    id: 'web',
-    name: '网页',
-    items: [
-      { name: 'Windows 12 网页版', url: 'http://p.xiaodu0.com/desktop.html', icon: '🖥️' },
-      { name: '小鹅通学员版', url: 'https://study.xiaoe-tech.com/t_l/learnIndex', icon: '📚' },
-      { name: 'RunningCheese', url: 'https://www.runningcheese.com/bookmarklets', icon: '🧀' }
+  {
+    id: 'online-tools',
+    name: '在线工具',
+    icon: '⚡',
+    fullDescription: '便捷的在线开发工具，包括ProcessOn流程图、Excalidraw白板、在线JSON格式化、Carbon代码美图等实用工具，提高开发效率。',
+    links: [
+      { name: 'ProcessOn', url: 'https://www.processon.com', description: '思维可视化 | 创意落地神器' },
+      { name: 'Excalidraw', url: 'https://excalidraw.com', description: '手绘风白板 | 协作黑科技' },
+      { name: '在线工具', url: 'https://tool.lu', description: '极客工具箱 | 开发者外挂' },
+      { name: 'JSON在线', url: 'https://www.sojson.com', description: '数据调教师 | 格式化利器' },
+      { name: 'Carbon', url: 'https://carbon.now.sh', description: '代码美学大师 | 极客装逼神器' },
+      { name: 'ColorHunt', url: 'https://colorhunt.co', description: '配色灵感库 | 视觉美学加油站' }
     ]
   },
-  reading: {
-    id: 'reading',
-    name: '阅读',
-    items: [
-      { name: '破局行动', url: 'https://aipoju.com/action', icon: '🎯' },
-      { name: 'CSDN', url: 'https://www.csdn.net', icon: '📝' }
+  {
+    id: 'platforms',
+    name: '学习平台',
+    icon: '🎓',
+    fullDescription: '优质IT学习平台，包括慕课网、网易云课堂、中国大学MOOC等，提供系统的编程课程和视频教程，适合不同阶段的学习者。',
+    links: [
+      { name: '慕课网', url: 'https://www.imooc.com', description: 'IT技能修炼场 | 实战派训练营' },
+      { name: '网易云课堂', url: 'https://study.163.com', description: '知识宝库 | 终身学习充电站' },
+      { name: '学堂在线', url: 'https://next.xuetangx.com', description: '清华血统 | 顶级学府课程' },
+      { name: 'MOOC', url: 'https://www.icourse163.org', description: '中国大学MOOC | 高材生之路' },
+      { name: 'B站', url: 'https://www.bilibili.com', description: '学习网站 | 程序员快乐源泉' },
+      { name: '牛客网', url: 'https://www.nowcoder.com', description: '求职神器 | 大厂收割机' }
     ]
   },
-  text: {
-    id: 'text',
-    name: '文字',
-    items: [
-      { name: '分隔符', url: 'https://separator.mayastudios.com/index.php?t=horz#', icon: '─' }
+  {
+    id: 'resources',
+    name: '技术资源',
+    icon: '📖',
+    fullDescription: '常用技术文档和资源库，包括ECharts数据可视化、Vue.js框架、jQuery库等技术文档，以及力扣等算法学习平台。',
+    links: [
+      { name: 'Apache ECharts', url: 'https://www.echartsjs.com', description: '数据可视化神器 | 百度开源力作' },
+      { name: 'Vue.js', url: 'https://cn.vuejs.org', description: '渐进式框架 | 前端魔法棒' },
+      { name: 'jQuery', url: 'https://jquery.com', description: 'JS经典库 | 永恒传奇' },
+      { name: 'EasyX文档', url: 'https://docs.easyx.cn', description: 'C语言图形库 | 游戏启蒙导师' },
+      { name: 'Qt', url: 'https://blog.csdn.net/lg930320', description: '跨平台王者 | 桌面开发神器' },
+      { name: '力扣', url: 'https://leetcode-cn.com', description: '算法竞技场 | 编程思维健身房' }
     ]
   },
-  search: {
-    id: 'search',
-    name: '搜索',
-    items: [
-      { name: '多标签搜索', url: 'https://www.runningcheese.com/multi-search', icon: '🔍' }
+  {
+    id: 'community',
+    name: '技术社区',
+    icon: '👥',
+    fullDescription: '活跃的技术开发者社区，包括OSCHINA开源社区、InfoQ技术前沿、51CTO技术分享等，获取最新技术资讯和经验交流。',
+    links: [
+      { name: 'OSCHINA', url: 'https://www.oschina.net', description: '开源中国 | 技术风向标' },
+      { name: 'InfoQ', url: 'https://www.infoq.com', description: '技术趋势洞察 | 前沿瞭望塔' },
+      { name: '51CTO', url: 'https://www.51cto.com', description: '技术弹药库 | 硬核内容集合地' },
+      { name: '脚本之家', url: 'https://www.jb51.net', description: '代码军火库 | 脚本资源大本营' },
+      { name: '图灵社区', url: 'https://www.ituring.com.cn', description: '图书殿堂 | 技术思想高地' },
+      { name: '云栖社区', url: 'https://yq.aliyun.com', description: '阿里云技术社区 | 云计算领航者' }
     ]
   },
-  searchEngines: {
-    id: 'searchEngines',
-    name: '搜索引擎',
-    items: [
-      { name: 'Google', url: 'https://www.google.com', icon: '🔍' },
-      { name: '百度', url: 'https://www.baidu.com', icon: '🐻' }
+  {
+    id: 'career',
+    name: '求职考试',
+    icon: '💼',
+    fullDescription: '程序员求职和考试相关资源，包括学信网学历查询、考研帮、软考考试、程序员客栈等，助力职业发展。',
+    links: [
+      { name: '学信网', url: 'https://www.chsi.com.cn', description: '学历权威认证 | 学籍身份验证' },
+      { name: '考研帮', url: 'http://www.kaoyan.com', description: '考研集结地 | 学历进阶之路' },
+      { name: '软考', url: 'http://www.ruankao.org.cn', description: '国家级IT认证 | 职称晋升通道' },
+      { name: '程序员客栈', url: 'https://www.proginn.com', description: '自由职业天堂 | 远程工作营地' },
+      { name: '牛耳', url: 'http://www.newer2001.com', description: 'IT职业教育 | 实战技能加速器' },
+      { name: '大鹏教育', url: 'https://www.dapengjiaoyu.cn', description: '在线IT培训 | 职业起飞跑道' }
     ]
   },
-  sidebarSearch: {
-    id: 'sidebarSearch',
-    name: '边栏搜索',
-    items: [
-      { name: '边栏搜索', url: 'https://www.runningcheese.com/sidebar-search', icon: '🔍' }
+  {
+    id: 'other',
+    name: '其他收藏',
+    icon: '🔖',
+    fullDescription: '其他实用网站收藏，包括破局行动个人成长社区、小鹅通知识付费工具、百度脑图在线思维导图等实用工具。',
+    links: [
+      { name: '破局行动', url: 'https://aipoju.com/action', description: '个人成长社区 | 自律进化基地' },
+      { name: '小鹅通', url: 'https://study.xiaoe-tech.com', description: '知识变现引擎 | 课程店铺搭建神器' },
+      { name: '百度脑图', url: 'https://naotu.baidu.com', description: '思维导图利器 | 创意可视化' },
+      { name: '去背景', url: 'https://www.remove.bg', description: 'AI黑科技 | 一键抠图魔法' },
+      { name: 'icon', url: 'http://www.easyicon.net', description: '图标弹药库 | 视觉设计素材库' },
+      { name: 'Google', url: 'https://www.google.hk', description: '终极搜索引擎 | 技术问题解答器' }
     ]
-  },
-  links: {
-    id: 'links',
-    name: '链接',
-    items: [
-      { name: 'Excalidraw', url: 'https://excalidraw.com', icon: '✏️' },
-      { name: 'Adobe', url: 'https://www.adobe.com', icon: '🎨' }
-    ]
-  },
-  images: {
-    id: 'images',
-    name: '图片',
-    items: []
-  },
-  design: {
-    id: 'design',
-    name: '设计',
-    items: [
-      { name: 'Excalidraw', url: 'https://excalidraw.com', icon: '✏️' },
-      { name: 'ECharts', url: 'https://www.echartsjs.com', icon: '📊' },
-      { name: '弹幕特效', url: 'https://www.17sucai.com', icon: '✨' },
-      { name: '思维导图', url: 'https://www.edrawsoft.com', icon: '🗺️' }
-    ]
-  },
-  development: {
-    id: 'development',
-    name: '开发',
-    items: [
-      { name: 'CSDN', url: 'https://www.csdn.net', icon: '📝' },
-      { name: 'GitHub', url: 'https://github.com', icon: '🐙' },
-      { name: '博客园', url: 'https://www.cnblogs.com', icon: '📖' },
-      { name: '脚本之家', url: 'https://www.jb51.net', icon: '🛠️' },
-      { name: '开源中国', url: 'https://www.oschina.net', icon: '🔧' }
-    ]
-  },
-  imported: {
-    id: 'imported',
-    name: '已导入',
-    items: []
   }
-}
+]
 
-const toggleFolder = (key) => {
-  expandedFolders.value[key] = !expandedFolders.value[key]
-}
+const currentCategory = computed(() => {
+  if (activeCategory.value === 'all') {
+    return { links: [], fullDescription: '' }
+  }
+  return categories.find(c => c.id === activeCategory.value) || categories[0]
+})
 
-const selectFolder = (folderId) => {
-  selectedFolder.value = folderData[folderId] || folderData.smallBar
-}
+const totalCount = computed(() => {
+  return categories.reduce((sum, cat) => sum + cat.links.length, 0)
+})
 </script>
 
 <style scoped>
 .bookmarks {
   background-color: var(--bg-dark);
-  padding: 60px 0;
+  padding: 80px 0;
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: var(--text-dark);
   text-align: center;
   text-shadow: var(--glow-text);
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .section-subtitle {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--text-light);
   text-align: center;
-  margin-bottom: 2rem;
-  max-width: 500px;
+  margin-bottom: 3rem;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.bookmarks-wrapper {
-  max-width: 1000px;
+.bookmarks-layout {
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 0;
-  background: rgba(10, 14, 39, 0.9);
-  border-radius: 8px;
-  overflow: hidden;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* 左侧分类列表 */
+.category-sidebar {
+  background: rgba(18, 24, 41, 0.6);
+  border-radius: 16px;
+  padding: 1rem;
   border: 1px solid rgba(0, 240, 255, 0.1);
+  position: sticky;
+  top: 100px;
 }
 
-/* 左侧树形结构 */
-.bookmarks-tree {
-  background: rgba(5, 10, 30, 0.9);
-  border-right: 1px solid rgba(0, 240, 255, 0.08);
-}
-
-.tree-content {
-  max-height: 700px;
-  overflow-y: auto;
-  padding: 0.5rem 0;
-}
-
-.tree-content::-webkit-scrollbar {
-  width: 6px;
-}
-
-.tree-content::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.tree-content::-webkit-scrollbar-thumb {
-  background: rgba(0, 240, 255, 0.2);
-  border-radius: 3px;
-}
-
-.tree-item {
-  user-select: none;
-}
-
-.tree-node {
+.category-item {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.35rem 0.6rem;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.15s ease;
-  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  margin-bottom: 0.5rem;
+  border: 1px solid transparent;
 }
 
-.tree-node:hover {
-  background: rgba(0, 240, 255, 0.06);
+.category-item:hover {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.2);
 }
 
-.tree-node.selected {
-  background: rgba(0, 240, 255, 0.12);
+.category-item.active {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(123, 44, 191, 0.2));
+  border-color: var(--primary-color);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
 }
 
-.tree-node.selected .tree-label {
-  color: var(--primary-color);
-}
-
-.tree-chevron {
-  font-size: 0.6rem;
-  color: var(--text-light);
-  width: 8px;
-}
-
-.tree-icon {
-  font-size: 0.85rem;
+.cat-icon {
+  font-size: 1.5rem;
   flex-shrink: 0;
-  width: 14px;
 }
 
-.tree-label {
+.cat-name {
   flex: 1;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-dark);
 }
 
-.tree-children {
-  margin-left: 0.8rem;
+.cat-count {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  background: rgba(0, 240, 255, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
 }
 
-/* 右侧详细内容 */
-.bookmarks-detail {
-  padding: 1rem;
-  background: rgba(5, 10, 30, 0.7);
+/* 右侧内容区 */
+.content-area {
+  min-height: 600px;
+}
+
+.all-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.category-detail {
+  background: rgba(18, 24, 41, 0.6);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 240, 255, 0.1);
 }
 
 .detail-header {
-  margin-bottom: 0.8rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.08);
-}
-
-.detail-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin: 0;
-}
-
-.detail-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  max-height: 650px;
-  overflow-y: auto;
-}
-
-.detail-content::-webkit-scrollbar {
-  width: 6px;
-}
-
-.detail-content::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.detail-content::-webkit-scrollbar-thumb {
-  background: rgba(0, 240, 255, 0.2);
-  border-radius: 3px;
-}
-
-.detail-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 0.6rem;
-  background: rgba(10, 14, 39, 0.3);
-  border-radius: 4px;
-  border: 1px solid rgba(0, 240, 255, 0.03);
-  transition: all 0.2s ease;
-}
-
-.detail-item:hover {
-  background: rgba(0, 240, 255, 0.06);
-  border-color: rgba(0, 240, 255, 0.15);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(0, 240, 255, 0.1);
 }
 
 .detail-icon {
-  font-size: 1rem;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  font-size: 2rem;
+  filter: drop-shadow(0 0 5px var(--primary-color));
 }
 
-.detail-info {
+.detail-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+  flex: 1;
+}
+
+/* 书签卡片样式 */
+.bookmark-category {
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(18, 24, 41, 0.6) 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bookmark-category:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(0, 240, 255, 0.2);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(0, 240, 255, 0.1);
+}
+
+.category-icon {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 5px var(--primary-color));
+}
+
+.category-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  flex: 1;
+}
+
+.category-count {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  background: rgba(0, 240, 255, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.bookmark-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bookmark-item {
+  margin-bottom: 0.75rem;
+}
+
+.bookmark-item:last-child {
+  margin-bottom: 0;
+}
+
+.bookmark-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(10, 14, 39, 0.6);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.bookmark-link:hover {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(123, 44, 191, 0.2));
+  border-color: var(--primary-color);
+  transform: translateX(4px);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+.bookmark-link:hover .bookmark-description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.bookmark-link:hover .bookmark-arrow {
+  transform: translateX(4px);
+  text-shadow: var(--glow-text);
+}
+
+.bookmark-info {
   flex: 1;
   min-width: 0;
 }
 
-.detail-name {
-  display: block;
-  font-size: 0.8rem;
-  font-weight: 500;
+.bookmark-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
   color: var(--text-dark);
-  text-decoration: none;
-  margin-bottom: 0.1rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  transition: color 0.3s ease;
 }
 
-.detail-name:hover {
+.bookmark-link:hover .bookmark-name {
   color: var(--primary-color);
 }
 
-.detail-url {
-  font-size: 0.65rem;
+.bookmark-description {
+  font-size: 0.8rem;
   color: var(--text-light);
-  display: block;
-  white-space: nowrap;
+  transition: color 0.3s ease;
   overflow: hidden;
   text-overflow: ellipsis;
-  opacity: 0.5;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.bookmark-arrow {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
 }
 
 @media (max-width: 968px) {
-  .bookmarks-wrapper {
+  .bookmarks-layout {
     grid-template-columns: 1fr;
-    max-width: 600px;
   }
 
-  .bookmarks-tree {
-    border-right: none;
-    border-bottom: 1px solid rgba(0, 240, 255, 0.08);
+  .category-sidebar {
+    position: static;
   }
 
-  .tree-content {
-    max-height: 300px;
+  .all-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .detail-icon {
+    font-size: 2.5rem;
+  }
+
+  .detail-title {
+    font-size: 1.5rem;
   }
 }
 </style>
