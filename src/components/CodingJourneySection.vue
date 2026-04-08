@@ -1,5 +1,15 @@
 <template>
   <section id="coding-journey" class="coding-journey">
+    <!-- 背景粒子效果 -->
+    <div class="particles-container">
+      <div v-for="i in 50" :key="i" class="particle" :style="particleStyle(i)"></div>
+    </div>
+
+    <!-- 鼠标光晕跟随 -->
+    <div class="cursor-glow" ref="cursorGlow"></div>
+
+    <!-- 扫描线效果 -->
+    <div class="scan-line"></div>
     <h2 class="section-title animate-fade-in">我的编程来时路</h2>
     <p class="section-subtitle animate-fade-in">技术学习之路 - 从2009年初识电脑到2025年AI编程</p>
 
@@ -416,7 +426,75 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
+
+const cursorGlow = ref(null)
+
+// 生成随机粒子样式
+const particleStyle = (index) => {
+  return {
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+    animationDelay: `${Math.random() * 5}s`,
+    animationDuration: `${5 + Math.random() * 10}s`,
+    width: `${2 + Math.random() * 4}px`,
+    height: `${2 + Math.random() * 4}px`
+  }
+}
+
+// 鼠标移动跟随效果
+const handleMouseMove = (e) => {
+  if (cursorGlow.value) {
+    const x = e.clientX
+    const y = e.clientY
+    cursorGlow.value.style.left = `${x}px`
+    cursorGlow.value.style.top = `${y}px`
+  }
+}
+
+// 添加事件监听
+onMounted(() => {
+  // 鼠标跟随事件
+  document.addEventListener('mousemove', handleMouseMove)
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // 添加延迟动画效果
+        setTimeout(() => {
+          entry.target.classList.add('is-visible')
+
+          // 如果是统计数字，触发计数动画
+          const numberElement = entry.target.querySelector('.stat-number[data-target]')
+          if (numberElement) {
+            const target = parseInt(numberElement.dataset.target)
+            animateNumber(numberElement, target)
+          }
+        }, index * 100) // 每个元素延迟100ms
+
+        observer.unobserve(entry.target)
+      }
+    })
+  }, observerOptions)
+
+  // 观察所有需要动画的元素
+  const animatedElements = document.querySelectorAll('.animate-on-scroll')
+  animatedElements.forEach(el => observer.observe(el))
+
+  // 观察淡入元素
+  const fadeElements = document.querySelectorAll('.animate-fade-in')
+  fadeElements.forEach((el, index) => {
+    setTimeout(() => {
+      el.classList.add('is-visible')
+    }, index * 200)
+  })
+})
 
 const imagePaths = {
   airplane: '/PersonWeb/airplane.png',
@@ -460,47 +538,6 @@ const animateNumber = (element, target, duration = 2000) => {
 
   requestAnimationFrame(updateNumber)
 }
-
-// 观察元素进入视口
-onMounted(() => {
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.15
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        // 添加延迟动画效果
-        setTimeout(() => {
-          entry.target.classList.add('is-visible')
-
-          // 如果是统计数字，触发计数动画
-          const numberElement = entry.target.querySelector('.stat-number[data-target]')
-          if (numberElement) {
-            const target = parseInt(numberElement.dataset.target)
-            animateNumber(numberElement, target)
-          }
-        }, index * 100) // 每个元素延迟100ms
-
-        observer.unobserve(entry.target)
-      }
-    })
-  }, observerOptions)
-
-  // 观察所有需要动画的元素
-  const animatedElements = document.querySelectorAll('.animate-on-scroll')
-  animatedElements.forEach(el => observer.observe(el))
-
-  // 观察淡入元素
-  const fadeElements = document.querySelectorAll('.animate-fade-in')
-  fadeElements.forEach((el, index) => {
-    setTimeout(() => {
-      el.classList.add('is-visible')
-    }, index * 200)
-  })
-})
 </script>
 
 <style scoped>
@@ -508,6 +545,294 @@ onMounted(() => {
   background-color: var(--bg-darker);
   padding: 80px 20px;
   overflow: hidden;
+  position: relative;
+}
+
+/* 背景粒子效果 */
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.8), transparent);
+  border-radius: 50%;
+  animation: particleFloat linear infinite;
+  opacity: 0;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1);
+    opacity: 0;
+  }
+}
+
+/* 鼠标光晕跟随 */
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.15), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+  animation: cursorPulse 2s ease-in-out infinite;
+}
+
+@keyframes cursorPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* 扫描线效果 */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.5), transparent);
+  animation: scanMove 8s linear infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes scanMove {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* 背景网格动画 */
+.coding-journey::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+/* 时间线发光增强 */
+.journey-timeline::before {
+  animation: timelineGlow 3s ease-in-out infinite alternate, glowLine 3s ease-in-out infinite alternate;
+}
+
+@keyframes timelineGlow {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 5px rgba(0, 240, 255, 0.5));
+  }
+  100% {
+    filter: brightness(1.3) drop-shadow(0 0 15px rgba(0, 240, 255, 0.8));
+  }
+}
+
+/* 全局悬浮效果 */
+.journey-item {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.journey-item:hover {
+  z-index: 10;
+}
+
+/* 标题打字机效果 */
+.section-title {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  animation: titleUnderline 1s ease forwards 0.5s;
+}
+
+@keyframes titleUnderline {
+  to {
+    width: 100px;
+  }
+}
+
+/* 开篇卡片发光 */
+.journey-intro {
+  position: relative;
+  z-index: 3;
+  animation: introGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes introGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.3);
+  }
+}
+
+/* 统计卡片波浪动画 */
+.stat-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-item::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 240, 255, 0.1) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  animation: waveMove 3s linear infinite;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+/* 图片容器发光效果 */
+.journey-image {
+  position: relative;
+}
+
+.journey-image::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+  border-radius: 15px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: borderRotate 3s linear infinite;
+}
+
+.journey-item:hover .journey-image::before {
+  opacity: 1;
+}
+
+@keyframes borderRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* 内容卡片闪光效果 */
+.journey-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-content::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  transform: rotate(30deg);
+  transition: all 0.6s;
+  opacity: 0;
+}
+
+.journey-content:hover::after {
+  animation: shimmer 1.5s ease-in-out;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -50%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    left: 150%;
+    opacity: 0;
+  }
 }
 
 /* 标题淡入动画 */
