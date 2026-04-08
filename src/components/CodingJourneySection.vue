@@ -1,8 +1,10 @@
 <template>
   <section id="coding-journey" class="coding-journey">
-    <!-- 背景粒子效果 -->
-    <div class="particles-container">
-      <div v-for="i in 50" :key="i" class="particle" :style="particleStyle(i)"></div>
+    <!-- 背景cmatrix数字雨效果 -->
+    <div class="cmatrix-container">
+      <div v-for="i in 40" :key="i" class="cmatrix-column" :style="cmatrixColumnStyle(i)">
+        <div v-for="j in 20" :key="j" class="cmatrix-char" :data-content="getRandomChar()"></div>
+      </div>
     </div>
 
     <!-- 鼠标光晕跟随 -->
@@ -430,16 +432,19 @@ import { ref, onMounted } from 'vue'
 
 const cursorGlow = ref(null)
 
-// 生成随机粒子样式
-const particleStyle = (index) => {
+// 生成cmatrix列样式
+const cmatrixColumnStyle = (index) => {
   return {
-    left: `${Math.random() * 100}%`,
-    top: `${Math.random() * 100}%`,
+    left: `${(index / 40) * 100}%`,
     animationDelay: `${Math.random() * 5}s`,
-    animationDuration: `${5 + Math.random() * 10}s`,
-    width: `${2 + Math.random() * 4}px`,
-    height: `${2 + Math.random() * 4}px`
+    animationDuration: `${3 + Math.random() * 4}s`
   }
+}
+
+// 生成随机字符
+const getRandomChar = () => {
+  const chars = '0123456789ABCDEFﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ'
+  return chars[Math.floor(Math.random() * chars.length)]
 }
 
 // 鼠标移动跟随效果
@@ -548,8 +553,8 @@ const animateNumber = (element, target, duration = 2000) => {
   position: relative;
 }
 
-/* 背景粒子效果 */
-.particles-container {
+/* cmatrix数字雨效果 */
+.cmatrix-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -558,30 +563,76 @@ const animateNumber = (element, target, duration = 2000) => {
   pointer-events: none;
   overflow: hidden;
   z-index: 1;
+  opacity: 0.15;
 }
 
-.particle {
+.cmatrix-column {
   position: absolute;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.8), transparent);
-  border-radius: 50%;
-  animation: particleFloat linear infinite;
-  opacity: 0;
+  top: -100%;
+  width: 20px;
+  height: 200%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0;
+  animation: cmatrixFall linear infinite;
 }
 
-@keyframes particleFloat {
+@keyframes cmatrixFall {
   0% {
-    transform: translateY(100vh) scale(0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.6;
-  }
-  90% {
-    opacity: 0.6;
+    transform: translateY(-50%);
   }
   100% {
-    transform: translateY(-100vh) scale(1);
-    opacity: 0;
+    transform: translateY(0%);
+  }
+}
+
+.cmatrix-char {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: cmatrixFade 0.5s ease-in-out infinite alternate;
+}
+
+.cmatrix-char::before {
+  content: attr(data-content);
+}
+
+@keyframes cmatrixFade {
+  0% {
+    opacity: 0.3;
+    text-shadow: 0 0 5px #0f0;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 20px #0f0, 0 0 30px #0f0;
+  }
+}
+
+/* 每列头部高亮效果 */
+.cmatrix-column::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent);
+  animation: cmatrixHead 1s ease-in-out infinite alternate;
+}
+
+@keyframes cmatrixHead {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
