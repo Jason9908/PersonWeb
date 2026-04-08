@@ -331,9 +331,13 @@
       </div>
 
       <!-- 半个小时手撸C++线程200元 -->
-      <div class="journey-item animate-on-scroll">
-        <div class="journey-image">
-          <img :src="imagePaths.cpp" alt="C++多线程" />
+      <div class="journey-item animate-on-scroll cpp-special">
+        <div class="journey-image cpp-image-wrapper">
+          <div class="code-rain"></div>
+          <div class="code-rain"></div>
+          <div class="code-rain"></div>
+          <img :src="imagePaths.cpp" alt="C++多线程" class="cpp-glow" />
+          <div class="typing-effect">&lt;thread&gt;</div>
         </div>
         <div class="journey-content">
           <h3 class="journey-title">半小时C++多线程 - 赚了200</h3>
@@ -898,6 +902,171 @@ onMounted(() => {
 
   .stat-number {
     font-size: 2rem;
+  }
+}
+
+/* C++特殊特效 */
+.cpp-special .journey-image {
+  position: relative;
+  overflow: visible;
+}
+
+.cpp-image-wrapper {
+  position: relative;
+}
+
+.cpp-glow {
+  position: relative;
+  z-index: 2;
+  animation: cppFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.5));
+}
+
+@keyframes cppFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+.cpp-image-wrapper:hover .cpp-glow {
+  animation: cppSpin 0.6s ease-in-out;
+  filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.8)) drop-shadow(0 0 40px rgba(0, 255, 136, 0.4));
+}
+
+@keyframes cppSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(5deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* 代码雨效果 */
+.code-rain {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(180deg, transparent, #00ff88, transparent);
+  opacity: 0;
+  z-index: 1;
+}
+
+.code-rain:nth-child(1) {
+  left: 10%;
+  animation: rainFall 2s linear infinite;
+  animation-delay: 0s;
+}
+
+.code-rain:nth-child(2) {
+  left: 50%;
+  animation: rainFall 2s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.code-rain:nth-child(3) {
+  left: 80%;
+  animation: rainFall 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes rainFall {
+  0% {
+    top: -20px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.cpp-image-wrapper:hover .code-rain {
+  animation-duration: 1s;
+}
+
+/* 打字机效果 */
+.typing-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
+  opacity: 0;
+  z-index: 3;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.cpp-image-wrapper:hover .typing-effect {
+  animation: typingReveal 0.5s ease forwards;
+}
+
+@keyframes typingReveal {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* C++标题特殊样式 */
+.cpp-special .journey-title {
+  background: linear-gradient(90deg, #00ff88, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.8), 0 0 30px rgba(0, 212, 255, 0.6);
+  }
+}
+
+/* 脉冲边框 */
+.cpp-special .journey-content {
+  border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.cpp-special:hover .journey-content {
+  border-color: rgba(0, 255, 136, 0.5);
+  animation: borderPulse 1s ease-in-out;
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    box-shadow: var(--shadow-lg), 0 0 0 0 rgba(0, 255, 136, 0.4);
+  }
+  50% {
+    box-shadow: var(--shadow-lg), 0 0 0 10px rgba(0, 255, 136, 0);
   }
 }
 </style>
