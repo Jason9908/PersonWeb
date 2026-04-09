@@ -1,9 +1,9 @@
 <template>
   <section id="coding-journey" class="coding-journey">
-    <!-- 背景cmatrix数字雨效果 -->
+    <!-- 背景cmatrix单行滚动效果 -->
     <div class="cmatrix-container">
-      <div v-for="i in 40" :key="i" class="cmatrix-column" :style="cmatrixColumnStyle(i)">
-        <div v-for="j in 20" :key="j" class="cmatrix-char" :data-content="getRandomChar()"></div>
+      <div class="cmatrix-line">
+        <span v-for="i in 200" :key="i" class="cmatrix-char">{{ getRandomChar() }}</span>
       </div>
     </div>
 
@@ -553,7 +553,7 @@ const animateNumber = (element, target, duration = 2000) => {
   position: relative;
 }
 
-/* cmatrix数字雨效果 */
+/* cmatrix单行滚动效果 */
 .cmatrix-container {
   position: absolute;
   top: 0;
@@ -563,76 +563,49 @@ const animateNumber = (element, target, duration = 2000) => {
   pointer-events: none;
   overflow: hidden;
   z-index: 1;
-  opacity: 0.15;
+  opacity: 0.12;
 }
 
-.cmatrix-column {
+.cmatrix-line {
   position: absolute;
-  top: -100%;
-  width: 20px;
-  height: 200%;
+  top: 50%;
+  left: 0;
+  width: 200%;
   display: flex;
-  flex-direction: column;
+  white-space: nowrap;
   font-family: 'Courier New', monospace;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #0f0;
   text-shadow: 0 0 10px #0f0;
-  animation: cmatrixFall linear infinite;
+  animation: cmatrixScroll 20s linear infinite;
+  transform: translateY(-50%);
 }
 
-@keyframes cmatrixFall {
+@keyframes cmatrixScroll {
   0% {
-    transform: translateY(-50%);
+    transform: translateX(0) translateY(-50%);
   }
   100% {
-    transform: translateY(0%);
+    transform: translateX(-50%) translateY(-50%);
   }
 }
 
 .cmatrix-char {
+  display: inline-block;
   width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  animation: cmatrixFade 0.5s ease-in-out infinite alternate;
+  text-align: center;
+  animation: cmatrixBlink 0.5s ease-in-out infinite alternate;
 }
 
-.cmatrix-char::before {
-  content: attr(data-content);
-}
-
-@keyframes cmatrixFade {
+@keyframes cmatrixBlink {
   0% {
     opacity: 0.3;
     text-shadow: 0 0 5px #0f0;
   }
   100% {
     opacity: 1;
-    text-shadow: 0 0 20px #0f0, 0 0 30px #0f0;
-  }
-}
-
-/* 每列头部高亮效果 */
-.cmatrix-column::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent);
-  animation: cmatrixHead 1s ease-in-out infinite alternate;
-}
-
-@keyframes cmatrixHead {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
+    text-shadow: 0 0 15px #0f0, 0 0 25px #0f0;
   }
 }
 
