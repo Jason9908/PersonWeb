@@ -350,8 +350,8 @@
           <div class="code-rain"></div>
           <img :src="imagePaths.cpp" alt="C++多线程" class="cpp-glow" />
           <div class="typing-effect">&lt;thread&gt;</div>
-        </div>
-        <div class="journey-content">
+
+          <div class="journey-content">
           <h3 class="journey-title">半小时C++多线程 - 赚了200</h3>
           <p class="journey-text">
             有人让我帮忙写个C++多线程程序，半小时搞定，赚了200块。
@@ -553,7 +553,7 @@ const animateNumber = (element, target, duration = 2000) => {
   position: relative;
 }
 
-/* cmatrix单行滚动效果 */
+/* cmatrix数字雨效果 */
 .cmatrix-container {
   position: absolute;
   top: 0;
@@ -563,49 +563,76 @@ const animateNumber = (element, target, duration = 2000) => {
   pointer-events: none;
   overflow: hidden;
   z-index: 1;
-  opacity: 0.12;
+  opacity: 0.15;
 }
 
-.cmatrix-line {
+.cmatrix-column {
   position: absolute;
-  top: 50%;
-  left: 0;
-  width: 200%;
+  top: -100%;
+  width: 20px;
+  height: 200%;
   display: flex;
-  white-space: nowrap;
+  flex-direction: column;
   font-family: 'Courier New', monospace;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   color: #0f0;
   text-shadow: 0 0 10px #0f0;
-  animation: cmatrixScroll 20s linear infinite;
-  transform: translateY(-50%);
+  animation: cmatrixFall linear infinite;
 }
 
-@keyframes cmatrixScroll {
+@keyframes cmatrixFall {
   0% {
-    transform: translateX(0) translateY(-50%);
+    transform: translateY(-50%);
   }
   100% {
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateY(0%);
   }
 }
 
 .cmatrix-char {
-  display: inline-block;
   width: 20px;
-  text-align: center;
-  animation: cmatrixBlink 0.5s ease-in-out infinite alternate;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: cmatrixFade 0.5s ease-in-out infinite alternate;
 }
 
-@keyframes cmatrixBlink {
+.cmatrix-char::before {
+  content: attr(data-content);
+}
+
+@keyframes cmatrixFade {
   0% {
     opacity: 0.3;
     text-shadow: 0 0 5px #0f0;
   }
   100% {
     opacity: 1;
-    text-shadow: 0 0 15px #0f0, 0 0 25px #0f0;
+    text-shadow: 0 0 20px #0f0, 0 0 30px #0f0;
+  }
+}
+
+/* 每列头部高亮效果 */
+.cmatrix-column::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent);
+  animation: cmatrixHead 1s ease-in-out infinite alternate;
+}
+
+@keyframes cmatrixHead {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -995,6 +1022,9 @@ const animateNumber = (element, target, duration = 2000) => {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .journey-intro {
