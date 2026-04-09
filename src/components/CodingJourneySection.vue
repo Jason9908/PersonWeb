@@ -1250,7 +1250,30 @@ const animateNumber = (element, target, duration = 2000) => {
   font-size: 0.95rem;
 }
 
+/* 平板适配 */
 @media (max-width: 900px) {
+  .coding-journey {
+    padding: 40px 15px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .journey-intro {
+    padding: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
   .journey-timeline::before {
     left: 20px;
   }
@@ -1258,6 +1281,7 @@ const animateNumber = (element, target, duration = 2000) => {
   .journey-item {
     flex-direction: column !important;
     padding-left: 50px;
+    margin-bottom: 2rem;
   }
 
   .journey-item::before {
@@ -1268,10 +1292,15 @@ const animateNumber = (element, target, duration = 2000) => {
   .journey-image {
     flex: none;
     width: 100%;
+    margin-bottom: 1rem;
   }
 
   .journey-title {
     font-size: 1.2rem;
+  }
+
+  .journey-text {
+    font-size: 0.95rem;
   }
 
   .journey-stats {
@@ -1279,8 +1308,219 @@ const animateNumber = (element, target, duration = 2000) => {
     gap: 1rem;
   }
 
+  .stat-item {
+    padding: 1.5rem 0.8rem;
+  }
+
   .stat-number {
     font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+
+  .cmatrix-line {
+    font-size: 14px;
+  }
+}
+
+/* 手机适配 */
+@media (max-width: 768px) {
+  .coding-journey {
+    padding: 30px 10px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .journey-intro {
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .intro-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .journey-timeline {
+    padding-left: 10px;
+  }
+
+  .journey-timeline::before {
+    left: 15px;
+    width: 2px;
+  }
+
+  .journey-item {
+    padding-left: 40px;
+    margin-bottom: 1.5rem;
+  }
+
+  .journey-item::before {
+    left: 8px !important;
+    width: 12px;
+    height: 12px;
+  }
+
+  .journey-content {
+    padding: 1rem;
+  }
+
+  .journey-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .journey-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .journey-stats {
+    gap: 0.8rem;
+    padding: 0 10px;
+  }
+
+  .stat-item {
+    padding: 1.2rem 0.6rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .cursor-glow {
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
+  }
+
+  .cmatrix-line {
+    font-size: 12px;
+    opacity: 0.08;
+  }
+
+  .scan-line {
+    height: 1px;
+  }
+}
+
+/* 小屏手机适配 */
+@media (max-width: 480px) {
+  .coding-journey {
+    padding: 20px 8px;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+    padding: 0 5px;
+  }
+
+  .journey-intro {
+    padding: 1rem;
+  }
+
+  .intro-text {
+    font-size: 0.9rem;
+  }
+
+  .journey-timeline::before {
+    left: 10px;
+  }
+
+  .journey-item {
+    padding-left: 30px;
+  }
+
+  .journey-item::before {
+    left: 5px !important;
+    width: 10px;
+    height: 10px;
+  }
+
+  .journey-content {
+    padding: 0.8rem;
+  }
+
+  .journey-title {
+    font-size: 1rem;
+  }
+
+  .journey-text {
+    font-size: 0.85rem;
+  }
+
+  .journey-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .stat-item {
+    padding: 1rem 0.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .cmatrix-line {
+    font-size: 10px;
+  }
+
+  .cursor-glow {
+    display: none;
+  }
+
+  /* 禁用一些复杂动画提升性能 */
+  .journey-content::after,
+  .stat-item::after,
+  .journey-image::before {
+    display: none;
+  }
+}
+
+/* 超小屏适配 */
+@media (max-width: 360px) {
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .journey-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
   }
 }
 
