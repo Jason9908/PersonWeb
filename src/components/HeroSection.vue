@@ -311,4 +311,120 @@
     margin-right: auto;
   }
 }
+
+/* 平板适配 */
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1rem 6rem;
+  }
+
+  .greeting {
+    font-size: 1rem;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    max-width: 500px;
+  }
+
+  .cta-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .avatar-container {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* 手机适配 */
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 0.8rem 5rem;
+    min-height: auto;
+  }
+
+  .greeting {
+    font-size: 0.9rem;
+  }
+
+  .name {
+    font-size: 1.8rem;
+  }
+
+  .title {
+    font-size: 0.95rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0 1rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .avatar-container {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 2rem;
+  }
+
+  .scroll-indicator {
+    bottom: 1rem;
+  }
+
+  .scroll-mouse {
+    width: 20px;
+    height: 32px;
+  }
+}
+
+/* 小屏手机适配 */
+@media (max-width: 360px) {
+  .hero {
+    padding: 2rem 0.5rem 4rem;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .title {
+    font-size: 0.85rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .cta-button {
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .avatar-container {
+    width: 140px;
+    height: 140px;
+  }
+}
 </style>

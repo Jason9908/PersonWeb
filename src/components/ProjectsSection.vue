@@ -240,4 +240,156 @@ const projects = [
   font-size: 0.8rem;
   font-weight: 500;
 }
+
+/* 平板适配 */
+@media (max-width: 900px) {
+  .projects {
+    padding: 4rem 1.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* 手机适配 */
+@media (max-width: 768px) {
+  .projects {
+    padding: 3rem 1rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .project-card {
+    border-radius: 12px;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .project-icon {
+    font-size: 3rem;
+  }
+
+  .project-content {
+    padding: 1.2rem;
+  }
+
+  .project-title {
+    font-size: 1.15rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .project-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .project-link {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* 小屏手机适配 */
+@media (max-width: 480px) {
+  .projects {
+    padding: 2rem 0.8rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .project-image {
+    height: 160px;
+  }
+
+  .project-icon {
+    font-size: 2.5rem;
+  }
+
+  .project-content {
+    padding: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .project-tags {
+    gap: 0.4rem;
+  }
+
+  .project-tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .project-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .project-link svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* 超小屏适配 */
+@media (max-width: 360px) {
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .project-image {
+    height: 140px;
+  }
+
+  .project-icon {
+    font-size: 2rem;
+  }
+}
 </style>
