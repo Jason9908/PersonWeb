@@ -122,11 +122,6 @@ const closeMenu = () => {
 }
 
 @media (max-width: 768px) {
-  /* 先隐藏桌面菜单 */
-  .nav-menu {
-    display: none;
-  }
-
   .menu-toggle {
     display: flex;
     flex-direction: column;
@@ -169,6 +164,7 @@ const closeMenu = () => {
     transform: rotate(-45deg);
   }
 
+  /* 移动端菜单 - 默认隐藏在右侧 */
   .nav-menu {
     display: flex;
     position: fixed;
@@ -185,6 +181,7 @@ const closeMenu = () => {
     transition: right 0.3s ease;
     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
     border-left: 1px solid rgba(0, 240, 255, 0.2);
+    z-index: 1000;
   }
 
   .nav-menu.menu-open {
