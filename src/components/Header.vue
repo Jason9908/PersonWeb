@@ -122,6 +122,11 @@ const closeMenu = () => {
 }
 
 @media (max-width: 768px) {
+  /* 先隐藏桌面菜单 */
+  .nav-menu {
+    display: none;
+  }
+
   .menu-toggle {
     display: flex;
     flex-direction: column;
@@ -165,6 +170,7 @@ const closeMenu = () => {
   }
 
   .nav-menu {
+    display: flex;
     position: fixed;
     top: 0;
     right: -100%;
