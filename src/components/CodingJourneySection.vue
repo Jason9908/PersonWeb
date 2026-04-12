@@ -25,7 +25,7 @@
     </div>
     
     <h2 class="section-title animate-fade-in">我的编程来时路</h2>
-    <p class="section-subtitle animate-fade-in">技术学习之路 - 从2009年初识电脑到2025年AI编程</p>
+    <h2 class="section-subtitle animate-fade-in">技术学习之路 - 从2009年初识电脑到2025年AI编程</h2>
 
     <!-- 开篇 -->
     <div class="journey-intro animate-fade-in">
@@ -1058,7 +1058,6 @@ const animateNumber = (element, target, duration = 2000) => {
   transition: width 1s ease 0.5s;
 }
 
-.animate-fade-in.is-visible + .section-subtitle,
 .animate-fade-in.is-visible.section-title::after {
   width: 100px;
 }
@@ -1068,12 +1067,10 @@ const animateNumber = (element, target, duration = 2000) => {
   color: var(--text-light);
   text-align: center;
   margin-bottom: 3rem;
-  max-width: 600px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .journey-intro {
