@@ -12,6 +12,18 @@
 
     <!-- 扫描线效果 -->
     <div class="scan-line"></div>
+    
+    <!-- 加载指示器 -->
+    <div v-if="isLoading" class="loading-overlay">
+      <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <div class="loading-progress">
+          <div class="loading-progress-bar" :style="{ width: loadingProgress + '%' }"></div>
+        </div>
+        <div class="loading-text">加载中... {{ loadingProgress }}%</div>
+      </div>
+    </div>
+    
     <h2 class="section-title animate-fade-in">我的编程来时路</h2>
     <p class="section-subtitle animate-fade-in">技术学习之路 - 从2009年初识电脑到2025年AI编程</p>
 
@@ -226,6 +238,7 @@
       <!-- 电脑转轴坏了 -->
       <div class="journey-item animate-on-scroll">
 
+
         <div class="journey-content">
           <h3 class="journey-title">12月 - 电脑转轴坏了</h3>
           <p class="journey-text">
@@ -350,8 +363,8 @@
           <div class="code-rain"></div>
           <img :src="imagePaths.cpp" alt="C++多线程" class="cpp-glow" />
           <div class="typing-effect">&lt;thread&gt;</div>
-
-          <div class="journey-content">
+        </div>
+        <div class="journey-content">
           <h3 class="journey-title">半小时C++多线程 - 赚了200</h3>
           <p class="journey-text">
             有人让我帮忙写个C++多线程程序，半小时搞定，赚了200块。
@@ -431,6 +444,8 @@
 import { ref, onMounted } from 'vue'
 
 const cursorGlow = ref(null)
+const isLoading = ref(true)
+const loadingProgress = ref(0)
 
 // 生成cmatrix列样式
 const cmatrixColumnStyle = (index) => {
@@ -457,8 +472,42 @@ const handleMouseMove = (e) => {
   }
 }
 
+// 图片预加载函数
+const preloadImages = async (images, batchSize = 3) => {
+  const imagePromises = Object.values(images).map(src => {
+    return new Promise((resolve, reject) => {
+      const img = new Image()
+      img.onload = () => resolve(src)
+      img.onerror = () => reject(src)
+      img.src = src
+    })
+  })
+
+  let loaded = 0
+  const total = imagePromises.length
+
+  // 分批次加载
+  for (let i = 0; i < total; i += batchSize) {
+    const batch = imagePromises.slice(i, i + batchSize)
+    await Promise.all(batch)
+    loaded += batch.length
+    loadingProgress.value = Math.round((loaded / total) * 100)
+  }
+
+  return true
+}
+
 // 添加事件监听
-onMounted(() => {
+onMounted(async () => {
+  // 预加载图片
+  try {
+    await preloadImages(imagePaths)
+  } catch (error) {
+    console.error('图片加载失败:', error)
+  } finally {
+    isLoading.value = false
+  }
+
   // 鼠标跟随事件
   document.addEventListener('mousemove', handleMouseMove)
 
@@ -1522,6 +1571,83 @@ const animateNumber = (element, target, duration = 2000) => {
   .stat-label {
     font-size: 0.7rem;
   }
+}
+
+/* 加载指示器样式 */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 8, 22, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+}
+
+.loading-content {
+  text-align: center;
+  max-width: 300px;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(18, 24, 41, 0.8) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(0, 240, 255, 0.2);
+  border-top: 3px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-progress {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(0, 240, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.loading-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+}
+
+.loading-text {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-shadow: var(--glow-text);
+}
+
+/* 加载过程中隐藏内容 */
+.loading-overlay + * {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* 加载完成后显示内容 */
+.loading-overlay:not(:only-child) + * {
+  opacity: 1;
 }
 
 /* C++特殊特效 */

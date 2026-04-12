@@ -90,6 +90,12 @@ const achievements = [
     title: '公众号',
     description: 'Jasonakeke - 分享技术与变现',
     highlight: true
+  },
+  {
+    icon: '🌐',
+    title: '网站升级',
+    description: '个人网站全面升级，添加AI功能和更多内容',
+    highlight: true
   }
 ]
 </script>

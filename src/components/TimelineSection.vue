@@ -110,6 +110,13 @@ const timelineEvents = [
     description: '获得香橙派 AI Pro，学习Cursor，50分钟完成聊天室项目赚175元',
     icon: '🤖',
     type: 'achievement'
+  },
+  {
+    year: '2026',
+    title: '网站升级',
+    description: '个人网站全面升级，添加更多功能和内容，提升用户体验',
+    icon: '🌐',
+    type: 'achievement'
   }
 ]
 </script>
