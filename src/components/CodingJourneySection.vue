@@ -43,6 +43,7 @@
           </p>
         </div>
       </div>
+      </div>
 
       <!-- 2018年高考 -->
       <div class="journey-item animate-on-scroll">
@@ -226,6 +227,7 @@
 
       <!-- 电脑转轴坏了 -->
       <div class="journey-item animate-on-scroll">
+
         <div class="journey-content">
           <h3 class="journey-title">12月 - 电脑转轴坏了</h3>
           <p class="journey-text">
