@@ -22,6 +22,7 @@
             <span class="community-tag">遇见合伙人</span>
             <span class="community-tag">洋洋合伙人</span>
             <span class="community-tag">喜乐合伙人</span>
+            <span class="community-tag">小灰风云会</span>
           </div>
         </div>
         <div class="about-skills">
@@ -168,6 +169,7 @@ import avatarImage from '../assets/images/avatar.jpg'
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  justify-content: center;
 }
 
 .skill-tag {
