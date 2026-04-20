@@ -100,7 +100,7 @@ const services = [
   background: linear-gradient(135deg, var(--bg-card) 0%, rgba(18, 24, 41, 0.6) 100%);
   border-radius: 16px;
   padding: 2rem;
-  border: 1px solid rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(var(--primary-color-rgb), 0.1);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;

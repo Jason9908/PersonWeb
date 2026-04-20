@@ -36,6 +36,7 @@
             <span class="skill-tag">数据库</span>
           </div>
         </div>
+        <ThemeSwitcher />
         <div class="about-actions">
           <a href="#contact" class="btn btn-primary">联系我</a>
           <a href="#achievements" class="btn btn-secondary">了解更多</a>
@@ -50,14 +51,15 @@
 
 <script setup>
 import avatarImage from '../assets/images/avatar.jpg'
+import ThemeSwitcher from './ThemeSwitcher.vue'
 </script>
 
 <style scoped>
 .about {
-  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-card) 50%, var(--bg-darker) 100%);
+  color: var(--text-dark);
   padding: 100px 0;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+  border-bottom: 1px solid rgba(var(--primary-color-rgb), 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -69,7 +71,7 @@ import avatarImage from '../assets/images/avatar.jpg'
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--primary-color-rgb), 0.1) 0%, transparent 70%);
   animation: rotate 20s linear infinite;
 }
 
