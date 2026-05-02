@@ -55,20 +55,6 @@
           </p>
         </div>
       </div>
-
-      <!-- 高三冬日修电脑 -->
-      <div class="journey-item animate-on-scroll">
-        <div class="journey-content">
-          <h3 class="journey-title">高三冬日 - 瞎按修好电脑</h3>
-          <p class="journey-text">
-            一个星期三的中午，我闲得没事干，电脑突然坏了。抱着试试看的心态拆开机箱，
-            就按了按里面的内存条什么的，没想到屏幕居然亮起来了！虽然只是瞎按，
-            但那一刻心里涌起一股巨大的自豪感，感觉自己什么都能搞定。下午老师上课时，
-            看到电脑修好了，说"这电脑能修好，真是牛"。
-          </p>
-        </div>
-      </div>
-
       <!-- 2018年高考 -->
       <div class="journey-item animate-on-scroll">
         <div class="journey-content">
@@ -76,6 +62,18 @@
           <p class="journey-text">
             高考完因为喜欢研究东西，选了物联网应用技术。结果发现是嵌入式方向，
             不过也无所谓了，反正跟技术有关就行。
+          </p>
+        </div>
+      </div>
+
+      <!-- 高三冬日修电脑 -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-content">
+          <h3 class="journey-title">高三冬日 - 瞎按修电脑</h3>
+          <p class="journey-text">
+            一个星期三的中午，我闲得没事干，电脑坏了。拆开机箱，就按了按里面的内存条等，
+            没想到被我"修好"了。虽然只是瞎按，但是屏幕亮起来的那一刻，心里涌起一股巨大的自豪感，
+            感觉自己什么都能搞定。下午老师上课时说这个电脑能修好真是牛。
           </p>
         </div>
       </div>
@@ -90,8 +88,6 @@
           </p>
         </div>
       </div>
-
-      
 
       <!-- C语言课 -->
       <div class="journey-item animate-on-scroll">
@@ -203,95 +199,254 @@
         <div class="journey-content">
           <h3 class="journey-title">达内课程</h3>
           <p class="journey-text">
-            暑假参加了达内的课程，学Java。第一次接触面向对象，有点懵。
-            不过跟着敲代码，慢慢就懂了。那段时间进步挺大的。
+            下学期学校跟达内合作，派了几个老师过来。教数据库的亮哥，搞嵌入式的辉哥，
+            还有老何教UC。亮哥不教废话，只教有用的，晚上和补课从来不上。
+            辉哥老给我们派任务，让我们抢着做，2048我做了好几个版本。
+            老何的UC课其实就是Linux C，讲了基本命令、Vim、分文件编程、文件读写和UDP。
+            跟着他们我们养成了敲笔记的习惯。
           </p>
         </div>
       </div>
 
-      <!-- 单片机课救场 -->
+      <!-- 二级C语言考试 -->
       <div class="journey-item animate-on-scroll">
         <div class="journey-content">
-          <h3 class="journey-title">单片机课 - 一分钟搞定Proteus</h3>
+          <h3 class="journey-title">12月21日 - 考二级C语言</h3>
           <p class="journey-text">
-            单片机课上，有的同学只有一个C盘，需要破解Proteus软件。老师折腾半天搞不定，
-            就请我帮忙。我上去一分钟就搞定了，老师当场说"牛"。那时候感觉自己有点东西了。
+            去总校考二级C，去早了在图书馆看书。考试30分钟就出来了，
+            别人还在摸软件，监考老师以为我不会做。哈哈。
           </p>
         </div>
       </div>
 
-      <!-- 第一次接单 -->
+      <!-- 工信部证书 -->
       <div class="journey-item animate-on-scroll">
+        <div class="journey-image">
+          <img :src="imagePaths.certificate" alt="考取证书" />
+        </div>
         <div class="journey-content">
-          <h3 class="journey-title">第一次接单</h3>
+          <h3 class="journey-title">工信部证书</h3>
           <p class="journey-text">
-            在淘宝上接了第一个私活，帮人写一个Java小程序。
-            虽然钱不多，但那种靠技术赚钱的感觉真爽。
+            说工信部证书就两天的课，我说是闹呢。结果给了8天，还是亮哥教。
+            其实这个证是拿Java做项目，我们连Java都没学过。第一天搭环境累死我了，
+            中午12:30才回去，吃完饭没休息就去别人那搭环境，害得我去教室前排没座位。
+            一个下午亮哥教了我们两个月的东西。幸好我脑子转得快，从此对Java有兴趣了。
+            亮哥还给了Java学习大纲和网站，Java开发速度快，确实香。
           </p>
         </div>
       </div>
 
-      <!-- 秋招碰壁 -->
+      <!-- Java项目 -->
       <div class="journey-item animate-on-scroll">
         <div class="journey-content">
-          <h3 class="journey-title">秋招 - 四处碰壁</h3>
+          <h3 class="journey-title">Java项目</h3>
           <p class="journey-text">
-            秋招开始投简历，杭州、深圳跑了一圈，投了上千份简历，面试无数次，
-            基本都石沉大海。那段时间真的很焦虑，怀疑自己是不是选错行了。
+            课程结束要交项目，我一个人做了十几个版本，做得我都快吐了。
+            不过做完还挺有成就感的。
           </p>
         </div>
       </div>
 
-      <!-- 坚持学习 -->
+      <!-- 电脑转轴坏了 -->
       <div class="journey-item animate-on-scroll">
+
+
         <div class="journey-content">
-          <h3 class="journey-title">坚持学习</h3>
+          <h3 class="journey-title">12月 - 电脑转轴坏了</h3>
           <p class="journey-text">
-            虽然找工作不顺，但还是每天坚持学习。刷LeetCode，看技术博客，
-            写开源项目。相信机会总会来的。
+            电脑转轴坏了，修了花了500块。心疼啊，不过电脑是吃饭的家伙，没办法。
           </p>
         </div>
       </div>
 
-      <!-- CSDN博主 -->
+      <!-- 实训周 -->
       <div class="journey-item animate-on-scroll">
         <div class="journey-content">
-          <h3 class="journey-title">CSDN博主 - 8K粉</h3>
+          <h3 class="journey-title">12月 - 实训周</h3>
           <p class="journey-text">
-            开始在CSDN写博客，分享技术心得。没想到慢慢有了8000多个粉丝，
-            还成了全栈领域新星博主。这给了我很大的信心。
+            数据库实训一天就搞完了，剩下时间写实训报告和两篇论文。UC实训要写聊天功能和文件传输，
+            三天半搞定。代码能力确实提高了不少。
           </p>
         </div>
       </div>
 
-      <!-- 阿里云专家 -->
+      <!-- 2020年疫情 -->
       <div class="journey-item animate-on-scroll">
         <div class="journey-content">
-          <h3 class="journey-title">阿里云专家认证</h3>
+          <h3 class="journey-title">2020年 - 疫情在家</h3>
           <p class="journey-text">
-            考了阿里云专家认证，算是对自己技术的一种认可吧。
-            继续加油！
+            2020年赶上疫情，被困在家里。辉哥一个人扛了Qt、ARM和WSN三门课。
+            可惜WSN没有硬件，最后就上了Qt课。3个G的教程包，靠时断时续的手机热点
+            下了三个小时，下完就发到班级群了。疫情也没耽误学习。
           </p>
         </div>
       </div>
 
-      <!-- AI编程 -->
+      <!-- 大二单片机课破解Proteus -->
       <div class="journey-item animate-on-scroll">
         <div class="journey-content">
-          <h3 class="journey-title">2025年 - AI编程</h3>
+          <h3 class="journey-title">大二疫情上学 - 一分钟破解Proteus</h3>
           <p class="journey-text">
-            现在开始学习AI相关的编程，感觉又是一个新的起点。
-            技术这条路，学无止境啊。
+            单片机课上，有的同学只有一个C盘，想请老师帮忙破解Proteus软件，
+            老师都不知道怎么搞。后来老师请我帮忙，我一分钟就搞定了。
+            老师都说我牛。
+          </p>
+        </div>
+      </div>
+
+      <!-- 2019年两天手撸飞机大战 -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-image">
+          <img :src="imagePaths.airplane" alt="飞机大战" />
+        </div>
+        <div class="journey-content">
+          <h3 class="journey-title">2019年 - 两天写个飞机大战</h3>
+          <p class="journey-text">
+            花了两天时间，从头写了个飞机大战游戏。没抄代码，没套框架，
+            自己瞎琢磨出来的。能跑起来还挺有成就感的。
+          </p>
+        </div>
+      </div>
+
+      <!-- 大学分数 -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-image">
+          <img :src="imagePaths.score" alt="大学成绩" />
+        </div>
+        <div class="journey-content">
+          <h3 class="journey-title">大学成绩</h3>
+          <p class="journey-text">
+            在校成绩还行，专业课基本都在前面。奖学金差一点没拿到，不过也无所谓了。
+            同学觉得我是学霸，老师也还认可我。
+          </p>
+        </div>
+      </div>
+
+      <!-- 2021年半年面试杭州深圳无果 -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-image">
+          <img :src="imagePaths.kilo" alt="求职之路" />
+        </div>
+        <div class="journey-content">
+          <h3 class="journey-title">2021年 - 找工作撞墙半年</h3>
+          <p class="journey-text">
+            毕业找工作太难了。杭州深圳跑了一圈，简历投了上千份，面试无数次，
+            就是找不到工作。那半年真是低谷，穷到吃泡面，不过没想过放弃编程。
+          </p>
+        </div>
+      </div>
+
+      <!-- 2022年写CSDN博文 -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-image">
+          <img :src="imagePaths.csdn" alt="CSDN博主" />
+        </div>
+        <div class="journey-content">
+          <h3 class="journey-title">2022年 - 开始写博客</h3>
+          <p class="journey-text">
+            在CSDN上开始写技术博客，分享学习心得和项目经验。
+            坚持写了一阵子，粉丝慢慢涨起来了，还成了全栈领域的新星博主。
+            虽然粉丝不算多，但也挺高兴的。
+          </p>
+        </div>
+      </div>
+
+      <!-- 2022年写CSDN博文 -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-image">
+          <img :src="imagePaths.csdnArticle" alt="CSDN文章" />
+        </div>
+        <div class="journey-content">
+          <h3 class="journey-title">2022年 - 写技术文章</h3>
+          <p class="journey-text">
+            坚持写文章，内容有嵌入式、Web开发、编程心得这些。
+            能帮到一些初学者也挺开心的，读者反馈也还不错。
+          </p>
+        </div>
+      </div>
+
+      <!-- 2022年靠接私活添置屏幕 -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-image">
+          <img :src="imagePaths.screen" alt="新屏幕" />
+        </div>
+        <div class="journey-content">
+          <h3 class="journey-title">2022年 - 接私活买屏幕</h3>
+          <p class="journey-text">
+            工作找不到，开始接私活维持生计。靠技术做了几个项目，
+            用赚的钱买了块新屏幕。拿到屏幕那一刻，觉得自己走这条路还是对的。
+          </p>
+        </div>
+      </div>
+
+      <!-- 半个小时手撸C++线程200元 -->
+      <div class="journey-item animate-on-scroll cpp-special">
+        <div class="journey-image cpp-image-wrapper">
+          <div class="code-rain"></div>
+          <div class="code-rain"></div>
+          <div class="code-rain"></div>
+          <img :src="imagePaths.cpp" alt="C++多线程" class="cpp-glow" />
+          <div class="typing-effect">&lt;thread&gt;</div>
+        </div>
+        <div class="journey-content">
+          <h3 class="journey-title">半小时C++多线程 - 赚了200</h3>
+          <p class="journey-text">
+            有人让我帮忙写个C++多线程程序，半小时搞定，赚了200块。
+            这时候才明白技术真的能变现，接单这条路能走。
+          </p>
+        </div>
+      </div>
+
+      <!-- 2023年与人合作小报童 -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-image">
+          <img :src="imagePaths.xiaobot" alt="小报童" />
+        </div>
+        <div class="journey-content">
+          <h3 class="journey-title">2023年 - 搞小报童</h3>
+          <p class="journey-text">
+            跟人合作开始做知识付费，小报童这些平台都试了试。
+            把自己的经验整理成付费内容，帮别人学习，自己也能赚点钱。
+            一举两得吧。
+          </p>
+        </div>
+      </div>
+
+      <!-- 2024年写一篇博文换开发板 -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-image">
+          <img :src="imagePaths.orangePIAIPro" alt="Orange Pi AI Pro" />
+        </div>
+        <div class="journey-content">
+          <h3 class="journey-title">2024年 - 写博文换开发板</h3>
+          <p class="journey-text">
+            写了篇Orange Pi AI Pro的博文，官方认可了，送了我一块开发板。
+            技术分享这条路走对了，还接触到了AI嵌入式的新技术。
+            挺爽的。
+          </p>
+        </div>
+      </div>
+
+      <!-- 2025年AI编程志愿者 -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-image">
+          <img :src="imagePaths.honor" alt="AI编程志愿者" />
+        </div>
+        <div class="journey-content">
+          <h3 class="journey-title">2025年 - AI编程志愿者</h3>
+          <p class="journey-text">
+            当了AI编程志愿者，帮更多人学AI编程。AI时代来了，
+            不学不行啊。边学边分享，能帮到别人也挺有意义的。
           </p>
         </div>
       </div>
     </div>
 
     <!-- 统计数据 -->
-    <div class="journey-stats">
+    <div class="journey-stats" ref="statsRef">
       <div class="stat-item animate-on-scroll stat-card">
         <div class="stat-number" data-target="200000">0</div>
-        <div class="stat-label">代码行数</div>
+        <div class="stat-label">敲过代码</div>
       </div>
       <div class="stat-item animate-on-scroll stat-card">
         <div class="stat-number" data-target="8000">0</div>
@@ -316,11 +471,22 @@ const cursorGlow = ref(null)
 const isLoading = ref(true)
 const loadingProgress = ref(0)
 
+// 生成cmatrix列样式
+const cmatrixColumnStyle = (index) => {
+  return {
+    left: `${(index / 40) * 100}%`,
+    animationDelay: `${Math.random() * 5}s`,
+    animationDuration: `${3 + Math.random() * 4}s`
+  }
+}
+
+// 生成随机字符
 const getRandomChar = () => {
   const chars = '0123456789ABCDEFﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ'
   return chars[Math.floor(Math.random() * chars.length)]
 }
 
+// 鼠标移动跟随效果
 const handleMouseMove = (e) => {
   if (cursorGlow.value) {
     const x = e.clientX
@@ -330,29 +496,24 @@ const handleMouseMove = (e) => {
   }
 }
 
-const preloadImages = async (images, batchSize = 5) => {
-  const imageEntries = Object.entries(images)
-  const total = imageEntries.length
-  let loaded = 0
-
-  const loadImage = (src, name) => {
-    return new Promise((resolve) => {
+// 图片预加载函数
+const preloadImages = async (images, batchSize = 3) => {
+  const imagePromises = Object.values(images).map(src => {
+    return new Promise((resolve, reject) => {
       const img = new Image()
-      img.crossOrigin = 'anonymous'
-      img.onload = () => {
-        resolve({ name, src, success: true })
-      }
-      img.onerror = () => {
-        resolve({ name, src, success: false })
-      }
+      img.onload = () => resolve(src)
+      img.onerror = () => reject(src)
       img.src = src
     })
-  }
+  })
 
+  let loaded = 0
+  const total = imagePromises.length
+
+  // 分批次加载
   for (let i = 0; i < total; i += batchSize) {
-    const batch = imageEntries.slice(i, i + batchSize)
-    const batchPromises = batch.map(([name, src]) => loadImage(src, name))
-    await Promise.all(batchPromises)
+    const batch = imagePromises.slice(i, i + batchSize)
+    await Promise.all(batch)
     loaded += batch.length
     loadingProgress.value = Math.round((loaded / total) * 100)
   }
@@ -360,7 +521,9 @@ const preloadImages = async (images, batchSize = 5) => {
   return true
 }
 
+// 添加事件监听
 onMounted(async () => {
+  // 预加载图片
   try {
     await preloadImages(imagePaths)
   } catch (error) {
@@ -369,6 +532,7 @@ onMounted(async () => {
     isLoading.value = false
   }
 
+  // 鼠标跟随事件
   document.addEventListener('mousemove', handleMouseMove)
 
   const observerOptions = {
@@ -380,24 +544,28 @@ onMounted(async () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
+        // 添加延迟动画效果
         setTimeout(() => {
           entry.target.classList.add('is-visible')
 
+          // 如果是统计数字，触发计数动画
           const numberElement = entry.target.querySelector('.stat-number[data-target]')
           if (numberElement) {
             const target = parseInt(numberElement.dataset.target)
             animateNumber(numberElement, target)
           }
-        }, index * 100)
+        }, index * 100) // 每个元素延迟100ms
 
         observer.unobserve(entry.target)
       }
     })
   }, observerOptions)
 
+  // 观察所有需要动画的元素
   const animatedElements = document.querySelectorAll('.animate-on-scroll')
   animatedElements.forEach(el => observer.observe(el))
 
+  // 观察淡入元素
   const fadeElements = document.querySelectorAll('.animate-fade-in')
   fadeElements.forEach((el, index) => {
     setTimeout(() => {
@@ -420,6 +588,7 @@ const imagePaths = {
   orangePIAIPro: '/PersonWeb/orangePIAIPro.png'
 }
 
+// 数字计数动画
 const animateNumber = (element, target, duration = 2000) => {
   const start = 0
   const startTime = performance.now()
@@ -428,6 +597,7 @@ const animateNumber = (element, target, duration = 2000) => {
     const elapsed = currentTime - startTime
     const progress = Math.min(elapsed / duration, 1)
 
+    // 使用 easeOutQuart 缓动函数
     const easeOut = 1 - Math.pow(1 - progress, 4)
     const current = Math.floor(start + (target - start) * easeOut)
 
@@ -436,7 +606,7 @@ const animateNumber = (element, target, duration = 2000) => {
     } else if (target >= 1000) {
       element.textContent = (current / 1000).toFixed(0) + 'K+'
     } else {
-      element.textContent = current + '+'
+      element.textContent = current
     }
 
     if (progress < 1) {
@@ -450,54 +620,101 @@ const animateNumber = (element, target, duration = 2000) => {
 
 <style scoped>
 .coding-journey {
-  min-height: 100vh;
+  background-color: var(--bg-darker);
   padding: 80px 20px;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
+/* cmatrix数字雨效果 */
 .cmatrix-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  overflow: hidden;
+  height: 100%;
   pointer-events: none;
-  z-index: 0;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0.15;
 }
 
-.cmatrix-line {
+.cmatrix-column {
+  position: absolute;
+  top: -100%;
+  width: 20px;
+  height: 200%;
   display: flex;
-  animation: cmatrixScroll 30s linear infinite;
+  flex-direction: column;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0;
+  animation: cmatrixFall linear infinite;
 }
 
-@keyframes cmatrixScroll {
+@keyframes cmatrixFall {
   0% {
-    transform: translateX(-100%);
+    transform: translateY(-50%);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateY(0%);
   }
 }
 
 .cmatrix-char {
-  font-family: 'Courier New', monospace;
-  font-size: 14px;
-  color: rgba(99, 102, 241, 0.6);
-  margin: 0 1px;
-  animation: cmatrixFlicker 0.5s ease-in-out infinite alternate;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: cmatrixFade 0.5s ease-in-out infinite alternate;
 }
 
-@keyframes cmatrixFlicker {
-  0% { opacity: 0.5; }
-  100% { opacity: 1; }
+.cmatrix-char::before {
+  content: attr(data-content);
 }
 
+@keyframes cmatrixFade {
+  0% {
+    opacity: 0.3;
+    text-shadow: 0 0 5px #0f0;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 20px #0f0, 0 0 30px #0f0;
+  }
+}
+
+/* 每列头部高亮效果 */
+.cmatrix-column::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent);
+  animation: cmatrixHead 1s ease-in-out infinite alternate;
+}
+
+@keyframes cmatrixHead {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 鼠标光晕跟随 */
 .cursor-glow {
   position: fixed;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent 70%);
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.15), transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -517,25 +734,37 @@ const animateNumber = (element, target, duration = 2000) => {
   }
 }
 
+/* 扫描线效果 */
 .scan-line {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.5), transparent);
   animation: scanMove 8s linear infinite;
   z-index: 2;
   pointer-events: none;
 }
 
 @keyframes scanMove {
-  0% { top: 0; opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { top: 100%; opacity: 0; }
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
 }
 
+/* 背景网格动画 */
 .coding-journey::before {
   content: '';
   position: absolute;
@@ -544,8 +773,8 @@ const animateNumber = (element, target, duration = 2000) => {
   width: 100%;
   height: 100%;
   background-image:
-    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
   animation: gridMove 20s linear infinite;
   pointer-events: none;
@@ -553,72 +782,281 @@ const animateNumber = (element, target, duration = 2000) => {
 }
 
 @keyframes gridMove {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(50px, 50px); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
 }
 
-.loading-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(5, 8, 22, 0.95);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  backdrop-filter: blur(10px);
+/* 时间线发光增强 */
+.journey-timeline::before {
+  animation: timelineGlow 3s ease-in-out infinite alternate, glowLine 3s ease-in-out infinite alternate;
 }
 
-.loading-content {
-  text-align: center;
-  max-width: 300px;
-  padding: 2rem;
-  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(18, 24, 41, 0.8) 100%);
-  border-radius: 16px;
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+@keyframes timelineGlow {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 5px rgba(0, 240, 255, 0.5));
+  }
+  100% {
+    filter: brightness(1.3) drop-shadow(0 0 15px rgba(0, 240, 255, 0.8));
+  }
 }
 
-.loading-spinner {
-  width: 60px;
-  height: 60px;
-  border: 3px solid rgba(99, 102, 241, 0.2);
-  border-top: 3px solid var(--primary-color);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 0 auto 1.5rem;
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+/* 全局悬浮效果 */
+.journey-item {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.journey-item:hover {
+  z-index: 10;
 }
 
-.loading-progress {
-  width: 100%;
-  height: 8px;
-  background-color: rgba(99, 102, 241, 0.1);
-  border-radius: 4px;
+/* 标题打字机效果 */
+.section-title {
+  position: relative;
   overflow: hidden;
-  margin-bottom: 1rem;
 }
 
-.loading-progress-bar {
-  height: 100%;
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0;
+  height: 3px;
   background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  border-radius: 4px;
-  transition: width 0.3s ease;
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+  animation: titleUnderline 1s ease forwards 0.5s;
 }
 
-.loading-text {
-  color: var(--primary-color);
-  font-size: 1.1rem;
-  font-weight: 500;
+@keyframes titleUnderline {
+  to {
+    width: 100px;
+  }
+}
+
+/* 开篇卡片发光 */
+.journey-intro {
+  position: relative;
+  z-index: 3;
+  animation: introGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes introGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.3);
+  }
+}
+
+/* 统计卡片波浪动画 */
+.stat-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-item::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(0, 240, 255, 0.1) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  animation: waveMove 3s linear infinite;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+/* 图片容器发光效果 */
+.journey-image {
+  position: relative;
+}
+
+.journey-image::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+  border-radius: 15px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: borderRotate 3s linear infinite;
+}
+
+.journey-item:hover .journey-image::before {
+  opacity: 1;
+}
+
+@keyframes borderRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* 内容卡片闪光效果 */
+.journey-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-content::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  transform: rotate(30deg);
+  transition: all 0.6s;
+  opacity: 0;
+}
+
+.journey-content:hover::after {
+  animation: shimmer 1.5s ease-in-out;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -50%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    left: 150%;
+    opacity: 0;
+  }
+}
+
+/* 标题淡入动画 */
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.animate-fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  text-align: center;
   text-shadow: var(--glow-text);
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 1s ease 0.5s;
+}
+
+.animate-fade-in.is-visible.section-title::after {
+  width: 100px;
+}
+
+/* 滚动触发动画 */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 时间线圆点脉冲动画 */
+.journey-item::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+  border: 3px solid var(--bg-darker);
+  z-index: 1;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.9);
+    transform: scale(1.1);
+  }
+}
+
+/* 时间线渐入动画 */
+.journey-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+  animation: glowLine 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowLine {
+  0% {
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.8), 0 0 35px rgba(0, 240, 255, 0.4);
+  }
 }
 
 .section-title {
@@ -665,7 +1103,7 @@ const animateNumber = (element, target, duration = 2000) => {
   padding: 2.5rem;
   background: linear-gradient(135deg, var(--bg-card) 0%, rgba(18, 24, 41, 0.6) 100%);
   border-radius: 16px;
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(0, 240, 255, 0.2);
 }
 
 .intro-text {
@@ -678,15 +1116,28 @@ const animateNumber = (element, target, duration = 2000) => {
   animation: fadeSlideIn 0.8s ease forwards;
 }
 
-.intro-text:nth-child(1) { animation-delay: 0.2s; }
-.intro-text:nth-child(2) { animation-delay: 0.4s; }
-
-@keyframes fadeSlideIn {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
+.intro-text:nth-child(1) {
+  animation-delay: 0.2s;
 }
 
-.intro-text:last-child { margin-bottom: 0; }
+.intro-text:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.intro-text:last-child {
+  margin-bottom: 0;
+}
 
 .journey-timeline {
   max-width: 1000px;
@@ -702,7 +1153,7 @@ const animateNumber = (element, target, duration = 2000) => {
   bottom: 0;
   width: 3px;
   background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
 }
 
 .journey-item {
@@ -713,14 +1164,41 @@ const animateNumber = (element, target, duration = 2000) => {
   padding-left: 30px;
 }
 
-.journey-item:nth-child(even) { flex-direction: row-reverse; }
+.journey-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.journey-item:nth-child(even)::before {
+  left: auto;
+  right: -8px;
+}
+
+.journey-image {
+  flex: 0 0 400px;
+}
+
+.journey-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0.9;
+}
+
+.journey-image img:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.7);
+  opacity: 1;
+}
 
 .journey-content {
   flex: 1;
   background: linear-gradient(135deg, var(--bg-card) 0%, rgba(18, 24, 41, 0.6) 100%);
   border-radius: 12px;
   padding: 1.5rem;
-  border: 1px solid rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
@@ -733,104 +1211,628 @@ const animateNumber = (element, target, duration = 2000) => {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
 }
 
-.journey-item:hover .journey-content::before { transform: scaleX(1); }
+.journey-content:hover::before {
+  transform: translateX(0);
+}
 
-.journey-item:hover .journey-content {
-  transform: translateY(-4px);
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
-  border-color: rgba(99, 102, 241, 0.3);
+.journey-content:hover {
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 240, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.journey-item:nth-child(even) .journey-content:hover {
+  transform: translateX(-5px);
 }
 
 .journey-title {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: 0.75rem;
   color: var(--primary-color);
+  margin-bottom: 1rem;
   text-shadow: var(--glow-text);
+  position: relative;
+  display: inline-block;
+}
+
+.journey-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.4s ease;
+}
+
+.journey-content:hover .journey-title::after {
+  width: 100%;
 }
 
 .journey-text {
   color: var(--text-light);
-  line-height: 1.7;
+  line-height: 1.9;
   font-size: 1rem;
 }
 
 .journey-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   max-width: 800px;
-  margin: 4rem auto 0;
+  margin: 0 auto;
 }
 
 .stat-item {
+  text-align: center;
+  padding: 2rem 1rem;
   background: linear-gradient(135deg, var(--bg-card) 0%, rgba(18, 24, 41, 0.6) 100%);
   border-radius: 16px;
-  padding: 2rem;
-  text-align: center;
-  border: 1px solid rgba(99, 102, 241, 0.1);
-  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.stat-item:hover::before {
+  left: 100%;
 }
 
 .stat-item:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(0, 240, 255, 0.3);
+  border-color: rgba(0, 240, 255, 0.4);
 }
 
 .stat-number {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--primary-color);
   text-shadow: var(--glow-text);
   margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover .stat-number {
+  transform: scale(1.1);
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.8), 0 0 40px rgba(0, 240, 255, 0.4);
 }
 
 .stat-label {
-  font-size: 0.9rem;
   color: var(--text-light);
+  font-size: 0.95rem;
 }
 
-@media (max-width: 768px) {
-  .coding-journey { padding: 60px 10px; }
+/* 平板适配 */
+@media (max-width: 900px) {
+  .coding-journey {
+    padding: 40px 15px;
+  }
 
-  .section-title { font-size: 1.5rem; }
-  .section-subtitle { font-size: 0.9rem; }
+  .section-title {
+    font-size: 2rem;
+  }
 
-  .journey-intro { padding: 1.5rem; }
-  .intro-text { font-size: 0.9rem; }
+  .section-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+    padding: 0 10px;
+  }
 
-  .journey-timeline::before { left: 25px; }
-  .journey-item { padding-left: 15px; gap: 1rem; }
-  .journey-content { padding: 1rem; }
-  .journey-title { font-size: 1.1rem; }
-  .journey-text { font-size: 0.9rem; }
+  .journey-intro {
+    padding: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .journey-timeline::before {
+    left: 20px;
+  }
+
+  .journey-item {
+    flex-direction: column !important;
+    padding-left: 50px;
+    margin-bottom: 2rem;
+  }
+
+  .journey-item::before {
+    left: 12px !important;
+    right: auto !important;
+  }
+
+  .journey-image {
+    flex: none;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .journey-title {
+    font-size: 1.2rem;
+  }
+
+  .journey-text {
+    font-size: 0.95rem;
+  }
 
   .journey-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
 
-  .stat-item { padding: 1.5rem; }
-  .stat-number { font-size: 1.8rem; }
+  .stat-item {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+
+  .cmatrix-line {
+    font-size: 14px;
+  }
 }
 
+/* 手机适配 */
+@media (max-width: 768px) {
+  .coding-journey {
+    padding: 30px 10px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .journey-intro {
+    padding: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .intro-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .journey-timeline {
+    padding-left: 10px;
+  }
+
+  .journey-timeline::before {
+    left: 15px;
+    width: 2px;
+  }
+
+  .journey-item {
+    padding-left: 40px;
+    margin-bottom: 1.5rem;
+  }
+
+  .journey-item::before {
+    left: 8px !important;
+    width: 12px;
+    height: 12px;
+  }
+
+  .journey-content {
+    padding: 1rem;
+  }
+
+  .journey-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .journey-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .journey-stats {
+    gap: 0.8rem;
+    padding: 0 10px;
+  }
+
+  .stat-item {
+    padding: 1.2rem 0.6rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .cursor-glow {
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
+  }
+
+  .cmatrix-line {
+    font-size: 12px;
+    opacity: 0.08;
+  }
+
+  .scan-line {
+    height: 1px;
+  }
+}
+
+/* 小屏手机适配 */
+@media (max-width: 480px) {
+  .coding-journey {
+    padding: 20px 8px;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.85rem;
+    padding: 0 5px;
+  }
+
+  .journey-intro {
+    padding: 1rem;
+  }
+
+  .intro-text {
+    font-size: 0.9rem;
+  }
+
+  .journey-timeline::before {
+    left: 10px;
+  }
+
+  .journey-item {
+    padding-left: 30px;
+  }
+
+  .journey-item::before {
+    left: 5px !important;
+    width: 10px;
+    height: 10px;
+  }
+
+  .journey-content {
+    padding: 0.8rem;
+  }
+
+  .journey-title {
+    font-size: 1rem;
+  }
+
+  .journey-text {
+    font-size: 0.85rem;
+  }
+
+  .journey-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .stat-item {
+    padding: 1rem 0.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .cmatrix-line {
+    font-size: 10px;
+  }
+
+  .cursor-glow {
+    display: none;
+  }
+
+  /* 禁用一些复杂动画提升性能 */
+  .journey-content::after,
+  .stat-item::after,
+  .journey-image::before {
+    display: none;
+  }
+}
+
+/* 超小屏适配 */
 @media (max-width: 360px) {
-  .section-title { font-size: 1.2rem; }
-  .section-subtitle { font-size: 0.8rem; }
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.8rem;
+  }
 
   .journey-stats {
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
   }
 
-  .stat-number { font-size: 1.3rem; }
-  .stat-label { font-size: 0.7rem; }
+  .stat-number {
+    font-size: 1.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+}
+
+/* 加载指示器样式 */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 8, 22, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+}
+
+.loading-content {
+  text-align: center;
+  max-width: 300px;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(18, 24, 41, 0.8) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(0, 240, 255, 0.2);
+  border-top: 3px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-progress {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(0, 240, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.loading-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+}
+
+.loading-text {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-shadow: var(--glow-text);
+}
+
+/* 加载过程中隐藏内容 */
+.loading-overlay + * {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* 加载完成后显示内容 */
+.loading-overlay:not(:only-child) + * {
+  opacity: 1;
+}
+
+/* C++特殊特效 */
+.cpp-special .journey-image {
+  position: relative;
+  overflow: visible;
+}
+
+.cpp-image-wrapper {
+  position: relative;
+}
+
+.cpp-glow {
+  position: relative;
+  z-index: 2;
+  animation: cppFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.5));
+}
+
+@keyframes cppFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+.cpp-image-wrapper:hover .cpp-glow {
+  animation: cppSpin 0.6s ease-in-out;
+  filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.8)) drop-shadow(0 0 40px rgba(0, 255, 136, 0.4));
+}
+
+@keyframes cppSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(5deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* 代码雨效果 */
+.code-rain {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(180deg, transparent, #00ff88, transparent);
+  opacity: 0;
+  z-index: 1;
+}
+
+.code-rain:nth-child(1) {
+  left: 10%;
+  animation: rainFall 2s linear infinite;
+  animation-delay: 0s;
+}
+
+.code-rain:nth-child(2) {
+  left: 50%;
+  animation: rainFall 2s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.code-rain:nth-child(3) {
+  left: 80%;
+  animation: rainFall 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes rainFall {
+  0% {
+    top: -20px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.cpp-image-wrapper:hover .code-rain {
+  animation-duration: 1s;
+}
+
+/* 打字机效果 */
+.typing-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
+  opacity: 0;
+  z-index: 3;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.cpp-image-wrapper:hover .typing-effect {
+  animation: typingReveal 0.5s ease forwards;
+}
+
+@keyframes typingReveal {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* C++标题特殊样式 */
+.cpp-special .journey-title {
+  background: linear-gradient(90deg, #00ff88, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.8), 0 0 30px rgba(0, 212, 255, 0.6);
+  }
+}
+
+/* 脉冲边框 */
+.cpp-special .journey-content {
+  border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.cpp-special:hover .journey-content {
+  border-color: rgba(0, 255, 136, 0.5);
+  animation: borderPulse 1s ease-in-out;
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    box-shadow: var(--shadow-lg), 0 0 0 0 rgba(0, 255, 136, 0.4);
+  }
+  50% {
+    box-shadow: var(--shadow-lg), 0 0 0 10px rgba(0, 255, 136, 0);
+  }
 }
 </style>
