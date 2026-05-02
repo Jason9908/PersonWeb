@@ -108,12 +108,15 @@ onUnmounted(() => {
   justify-content: center;
   box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
   transition: all 0.3s ease;
+}
+
+.back-to-top {
   opacity: 0;
   visibility: hidden;
   transform: scale(0.8);
 }
 
-.side-nav-btn.visible {
+.back-to-top.visible {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
@@ -124,16 +127,8 @@ onUnmounted(() => {
   box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
 }
 
-.back-to-top {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-}
-
 .quick-menu-btn {
   background: linear-gradient(135deg, var(--accent-color), #059669);
-}
-
-.quick-menu-btn.active {
-  transform: rotate(90deg);
 }
 
 .quick-nav-menu {
