@@ -12,6 +12,7 @@
       <ContactSection />
     </main>
     <Footer />
+    <SideNav />
   </div>
 </template>
 
@@ -26,6 +27,7 @@ import BookmarksSection from './components/BookmarksSection.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import Footer from './components/Footer.vue'
+import SideNav from './components/SideNav.vue'
 </script>
 
 <style scoped>
