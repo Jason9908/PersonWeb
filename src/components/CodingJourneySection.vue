@@ -55,16 +55,6 @@
           </p>
         </div>
       </div>
-      <!-- 2018年高考 -->
-      <div class="journey-item animate-on-scroll">
-        <div class="journey-content">
-          <h3 class="journey-title">2018年高考 - 选了物联网</h3>
-          <p class="journey-text">
-            高考完因为喜欢研究东西，选了物联网应用技术。结果发现是嵌入式方向，
-            不过也无所谓了，反正跟技术有关就行。
-          </p>
-        </div>
-      </div>
 
       <!-- 高三冬日修电脑 -->
       <div class="journey-item animate-on-scroll">
@@ -74,6 +64,17 @@
             一个星期三的中午，我闲得没事干，电脑坏了。拆开机箱，就按了按里面的内存条等，
             没想到被我"修好"了。虽然只是瞎按，但是屏幕亮起来的那一刻，心里涌起一股巨大的自豪感，
             感觉自己什么都能搞定。下午老师上课时说这个电脑能修好真是牛。
+          </p>
+        </div>
+      </div>
+
+      <!-- 2018年高考 -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-content">
+          <h3 class="journey-title">2018年高考 - 选了物联网</h3>
+          <p class="journey-text">
+            高考完因为喜欢研究东西，选了物联网应用技术。结果发现是嵌入式方向，
+            不过也无所谓了，反正跟技术有关就行。
           </p>
         </div>
       </div>
@@ -282,18 +283,6 @@
         </div>
       </div>
 
-      <!-- 大二单片机课破解Proteus -->
-      <div class="journey-item animate-on-scroll">
-        <div class="journey-content">
-          <h3 class="journey-title">大二疫情上学 - 一分钟破解Proteus</h3>
-          <p class="journey-text">
-            单片机课上，有的同学只有一个C盘，想请老师帮忙破解Proteus软件，
-            老师都不知道怎么搞。后来老师请我帮忙，我一分钟就搞定了。
-            老师都说我牛。
-          </p>
-        </div>
-      </div>
-
       <!-- 2019年两天手撸飞机大战 -->
       <div class="journey-item animate-on-scroll">
         <div class="journey-image">
@@ -304,6 +293,18 @@
           <p class="journey-text">
             花了两天时间，从头写了个飞机大战游戏。没抄代码，没套框架，
             自己瞎琢磨出来的。能跑起来还挺有成就感的。
+          </p>
+        </div>
+      </div>
+
+      <!-- 大二单片机课破解Proteus -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-content">
+          <h3 class="journey-title">大二疫情上学 - 一分钟破解Proteus</h3>
+          <p class="journey-text">
+            单片机课上，有的同学只有一个C盘，想请老师帮忙破解Proteus软件，
+            老师都不知道怎么搞。后来老师请我帮忙，我一分钟就搞定了。
+            老师都说我牛。
           </p>
         </div>
       </div>
