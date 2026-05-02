@@ -12,6 +12,7 @@
       <ContactSection />
     </main>
     <Footer />
+    <button class="test-button" @click="testClick">测试点击</button>
   </div>
 </template>
 
@@ -26,6 +27,10 @@ import BookmarksSection from './components/BookmarksSection.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import Footer from './components/Footer.vue'
+
+const testClick = () => {
+  alert('点击成功！')
+}
 </script>
 
 <style scoped>
@@ -65,5 +70,27 @@ section::before {
 
 section:last-child {
   border-bottom: none;
+}
+
+.test-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  transition: all 0.3s ease;
+}
+
+.test-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
 }
 </style>
