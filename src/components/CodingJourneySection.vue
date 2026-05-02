@@ -195,6 +195,20 @@
         </div>
       </div>
 
+      <!-- 2019年两天手撸飞机大战 -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-image">
+          <img :src="imagePaths.airplane" alt="飞机大战" />
+        </div>
+        <div class="journey-content">
+          <h3 class="journey-title">2019年 - 两天写个飞机大战</h3>
+          <p class="journey-text">
+            花了两天时间，从头写了个飞机大战游戏。没抄代码，没套框架，
+            自己瞎琢磨出来的。能跑起来还挺有成就感的。
+          </p>
+        </div>
+      </div>
+
       <!-- 达内课程 -->
       <div class="journey-item animate-on-scroll">
         <div class="journey-content">
@@ -212,7 +226,7 @@
       <!-- 二级C语言考试 -->
       <div class="journey-item animate-on-scroll">
         <div class="journey-content">
-          <h3 class="journey-title">12月21日 - 考二级C语言</h3>
+          <h3 class="journey-title">9月21日 - 考二级C语言</h3>
           <p class="journey-text">
             去总校考二级C，去早了在图书馆看书。考试30分钟就出来了，
             别人还在摸软件，监考老师以为我不会做。哈哈。
@@ -283,19 +297,7 @@
         </div>
       </div>
 
-      <!-- 2019年两天手撸飞机大战 -->
-      <div class="journey-item animate-on-scroll">
-        <div class="journey-image">
-          <img :src="imagePaths.airplane" alt="飞机大战" />
-        </div>
-        <div class="journey-content">
-          <h3 class="journey-title">2019年 - 两天写个飞机大战</h3>
-          <p class="journey-text">
-            花了两天时间，从头写了个飞机大战游戏。没抄代码，没套框架，
-            自己瞎琢磨出来的。能跑起来还挺有成就感的。
-          </p>
-        </div>
-      </div>
+      
 
       <!-- 大二单片机课破解Proteus -->
       <div class="journey-item animate-on-scroll">
@@ -392,8 +394,8 @@
         <div class="journey-content">
           <h3 class="journey-title">半小时C++多线程 - 赚了200</h3>
           <p class="journey-text">
-            有人让我帮忙写个C++多线程程序，半小时搞定，赚了200块。
-            这时候才明白技术真的能变现，接单这条路能走。
+            2022年12月初，第二次接私活，是那个C++线程，那里没学，我都敢接，
+            由于很急又是晚上，对方让我直接报价，我说200，对方觉得OK，我立马开动，那时候没有AI，就完完全全地百度和各种CSDN，结果25分钟我就写完了，太高兴了。
           </p>
         </div>
       </div>
@@ -408,7 +410,7 @@
           <p class="journey-text">
             跟人合作开始做知识付费，小报童这些平台都试了试。
             把自己的经验整理成付费内容，帮别人学习，自己也能赚点钱。
-            一举两得吧。
+            一举两得吧，由于僧多肉少，赚得有点少，只有50元。
           </p>
         </div>
       </div>
