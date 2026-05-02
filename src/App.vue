@@ -1,5 +1,5 @@
 <template>
-  <div class="app grid-background">
+  <div class="app">
     <Header />
     <main>
       <AboutSection />
