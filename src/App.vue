@@ -44,7 +44,7 @@ main {
   padding: 0 20px;
   width: 100%;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 section {

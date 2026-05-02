@@ -725,7 +725,7 @@ const animateNumber = (element, target, duration = 2000) => {
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  z-index: 100;
   transition: opacity 0.3s ease;
   animation: cursorPulse 2s ease-in-out infinite;
 }
@@ -1612,7 +1612,7 @@ const animateNumber = (element, target, duration = 2000) => {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 100;
   backdrop-filter: blur(10px);
 }
 
