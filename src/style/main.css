@@ -35,6 +35,7 @@ body {
   background-color: var(--bg-darker);
   overflow-x: hidden;
   position: relative;
+  pointer-events: auto;
 }
 
 body::before {

@@ -725,7 +725,7 @@ const animateNumber = (element, target, duration = 2000) => {
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  z-index: 100;
+  z-index: -1;
   transition: opacity 0.3s ease;
   animation: cursorPulse 2s ease-in-out infinite;
 }
