@@ -98,6 +98,14 @@ body::after {
   z-index: -2;
 }
 
+* {
+  pointer-events: auto !important;
+}
+
+a, button, [role="button"] {
+  pointer-events: auto !important;
+}
+
 a {
   text-decoration: none;
   color: inherit;
