@@ -22,7 +22,19 @@
           <div class="contact-info">
             <h3 class="contact-title">公众号</h3>
             <p class="contact-value">柯柯的AI宝藏库</p>
-            <img :src="gzhQrCode" alt="公众号" class="qrcode-image" />
+            <div class="qrcode-container">
+              <img 
+                :src="gzhQrCode" 
+                alt="公众号" 
+                class="qrcode-image"
+                @error="handleImageError('gzh', $event)"
+                loading="lazy"
+              />
+              <div v-if="imageErrors.gzh" class="qrcode-fallback">
+                <span class="fallback-icon">📱</span>
+                <span class="fallback-text">公众号</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -31,7 +43,19 @@
           <div class="contact-info">
             <h3 class="contact-title">微信</h3>
             <p class="contact-value">扫码添加</p>
-            <img :src="wechatQrCode" alt="微信" class="qrcode-image" />
+            <div class="qrcode-container">
+              <img 
+                :src="wechatQrCode" 
+                alt="微信" 
+                class="qrcode-image"
+                @error="handleImageError('wechat', $event)"
+                loading="lazy"
+              />
+              <div v-if="imageErrors.wechat" class="qrcode-fallback">
+                <span class="fallback-icon">💬</span>
+                <span class="fallback-text">微信</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -83,6 +107,15 @@ const formData = reactive({
 
 const isSubmitting = ref(false)
 const submitStatus = ref(null)
+const imageErrors = reactive({
+  gzh: false,
+  wechat: false
+})
+
+const handleImageError = (imageType, event) => {
+  console.error(`图片加载失败: ${imageType}`, event)
+  imageErrors[imageType] = true
+}
 
 const handleSubmit = async () => {
   isSubmitting.value = true
@@ -175,7 +208,7 @@ const handleSubmit = async () => {
   padding: 1.5rem;
   background: linear-gradient(135deg, var(--bg-card) 0%, rgba(18, 24, 41, 0.6) 100%);
   border-radius: 12px;
-  border: 1px solid rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.1);
   transition: all 0.3s ease;
   text-decoration: none;
 }
@@ -183,7 +216,7 @@ const handleSubmit = async () => {
 .contact-card:not(.qrcode-card):hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow);
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(123, 44, 191, 0.2));
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
   border-color: var(--primary-color);
 }
 
@@ -198,13 +231,53 @@ const handleSubmit = async () => {
   cursor: default;
 }
 
-.qrcode-image {
+.qrcode-container {
+  position: relative;
   width: 150px;
   height: 150px;
   margin-top: 1rem;
   border-radius: 8px;
+}
+
+.qrcode-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
   border: 2px solid var(--primary-color);
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+}
+
+.qrcode-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+}
+
+.qrcode-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+  border-radius: 8px;
+  border: 2px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fallback-icon {
+  font-size: 2rem;
+}
+
+.fallback-text {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  font-weight: 600;
 }
 
 .contact-icon {
@@ -240,7 +313,7 @@ const handleSubmit = async () => {
   background: linear-gradient(135deg, var(--bg-card) 0%, rgba(18, 24, 41, 0.6) 100%);
   padding: 2rem;
   border-radius: 16px;
-  border: 1px solid rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.1);
 }
 
 .contact-form h3 {
@@ -272,17 +345,17 @@ const handleSubmit = async () => {
 }
 
 .status-message.success {
-  background: rgba(0, 255, 128, 0.1);
-  border: 1px solid rgba(0, 255, 128, 0.3);
-  color: #00ff80;
-  box-shadow: 0 0 15px rgba(0, 255, 128, 0.2);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
 }
 
 .status-message.error {
-  background: rgba(255, 77, 77, 0.1);
-  border: 1px solid rgba(255, 77, 77, 0.3);
-  color: #ff4d4d;
-  box-shadow: 0 0 15px rgba(255, 77, 77, 0.2);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
 }
 
 .form-group {
@@ -300,7 +373,7 @@ const handleSubmit = async () => {
 .form-group textarea {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 2px solid rgba(0, 240, 255, 0.2);
+  border: 2px solid rgba(99, 102, 241, 0.2);
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
@@ -313,7 +386,7 @@ const handleSubmit = async () => {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
 }
 
 .form-group textarea {
@@ -331,12 +404,12 @@ const handleSubmit = async () => {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
 }
 
 .submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
 }
 
 .submit-btn:disabled {
