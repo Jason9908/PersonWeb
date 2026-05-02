@@ -499,13 +499,13 @@ const handleMouseMove = (e) => {
   }
 }
 
-// 图片预加载函数
-const preloadImages = async (images, batchSize = 3) => {
+// 图片预加载函数 - 优化：全部并发加载
+const preloadImages = async (images, batchSize = 20) => {
   const imagePromises = Object.values(images).map(src => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const img = new Image()
       img.onload = () => resolve(src)
-      img.onerror = () => reject(src)
+      img.onerror = () => resolve(src) // 失败也继续，不阻塞
       img.src = src
     })
   })
@@ -513,14 +513,18 @@ const preloadImages = async (images, batchSize = 3) => {
   let loaded = 0
   const total = imagePromises.length
 
-  // 分批次加载
-  for (let i = 0; i < total; i += batchSize) {
-    const batch = imagePromises.slice(i, i + batchSize)
-    await Promise.all(batch)
-    loaded += batch.length
-    loadingProgress.value = Math.round((loaded / total) * 100)
-  }
+  // 全部并发加载，不等待
+  imagePromises.forEach((promise) => {
+    promise.then(() => {
+      loaded++
+      loadingProgress.value = Math.round((loaded / total) * 100)
+    })
+  })
 
+  // 设置最大等待时间5秒，避免无限等待
+  const timeout = new Promise(resolve => setTimeout(resolve, 5000))
+  await Promise.race([Promise.all(imagePromises), timeout])
+  
   return true
 }
 
