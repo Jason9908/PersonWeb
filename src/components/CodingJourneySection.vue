@@ -91,16 +91,7 @@
         </div>
       </div>
 
-      <!-- 单片机课救场 -->
-      <div class="journey-item animate-on-scroll">
-        <div class="journey-content">
-          <h3 class="journey-title">单片机课 - 一分钟搞定Proteus</h3>
-          <p class="journey-text">
-            单片机课上，有的同学只有一个C盘，需要破解Proteus软件。老师折腾半天搞不定，
-            就请我帮忙。我上去一分钟就搞定了，老师当场说"牛"。那时候感觉自己有点东西了。
-          </p>
-        </div>
-      </div>
+      
 
       <!-- C语言课 -->
       <div class="journey-item animate-on-scroll">
@@ -214,6 +205,17 @@
           <p class="journey-text">
             暑假参加了达内的课程，学Java。第一次接触面向对象，有点懵。
             不过跟着敲代码，慢慢就懂了。那段时间进步挺大的。
+          </p>
+        </div>
+      </div>
+
+      <!-- 单片机课救场 -->
+      <div class="journey-item animate-on-scroll">
+        <div class="journey-content">
+          <h3 class="journey-title">单片机课 - 一分钟搞定Proteus</h3>
+          <p class="journey-text">
+            单片机课上，有的同学只有一个C盘，需要破解Proteus软件。老师折腾半天搞不定，
+            就请我帮忙。我上去一分钟就搞定了，老师当场说"牛"。那时候感觉自己有点东西了。
           </p>
         </div>
       </div>
