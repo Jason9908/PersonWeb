@@ -471,7 +471,7 @@
 import { ref, onMounted } from 'vue'
 
 const cursorGlow = ref(null)
-const isLoading = ref(true)
+const isLoading = ref(false)
 const loadingProgress = ref(0)
 
 // 生成cmatrix列样式
