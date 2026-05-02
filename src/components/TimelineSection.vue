@@ -227,10 +227,10 @@ const timelineEvents = [
 }
 
 .timeline-content {
-  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(18, 24, 41, 0.6) 100%);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(55, 65, 81, 0.6) 100%);
   padding: 1.5rem;
   border-radius: 16px;
-  border: 1px solid rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.1);
   transition: all 0.3s ease;
   position: relative;
 }
@@ -250,7 +250,7 @@ const timelineEvents = [
 .timeline-item:hover .timeline-content {
   transform: translateX(8px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(0, 240, 255, 0.3);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 .timeline-year {
@@ -262,7 +262,7 @@ const timelineEvents = [
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
 }
 
 .timeline-title {
@@ -281,11 +281,11 @@ const timelineEvents = [
   max-width: 700px;
   margin: 4rem auto 0;
   padding: 2rem;
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(123, 44, 191, 0.1));
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
   border-radius: 16px;
   text-align: center;
   color: white;
-  border: 1px solid rgba(0, 240, 255, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.2);
   box-shadow: var(--shadow);
 }
 

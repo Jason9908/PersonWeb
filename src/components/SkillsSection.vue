@@ -97,10 +97,10 @@ const services = [
 }
 
 .service-card {
-  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(18, 24, 41, 0.6) 100%);
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(55, 65, 81, 0.6) 100%);
   border-radius: 16px;
   padding: 2rem;
-  border: 1px solid rgba(var(--primary-color-rgb), 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.1);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -129,7 +129,7 @@ const services = [
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(0, 240, 255, 0.3);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 .service-icon {

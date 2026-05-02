@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app grid-background">
     <Header />
     <main>
       <AboutSection />
@@ -34,6 +34,7 @@ import Footer from './components/Footer.vue'
   display: flex;
   flex-direction: column;
   background: linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+  position: relative;
 }
 
 main {
@@ -42,11 +43,24 @@ main {
   margin: 0 auto;
   padding: 0 20px;
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 section {
   padding: 80px 0;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+  position: relative;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(17, 24, 39, 0.5) 100%);
+  pointer-events: none;
 }
 
 section:last-child {

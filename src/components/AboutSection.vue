@@ -36,14 +36,13 @@
             <span class="skill-tag">数据库</span>
           </div>
         </div>
-        <ThemeSwitcher />
         <div class="about-actions">
           <a href="#contact" class="btn btn-primary">联系我</a>
           <a href="#achievements" class="btn btn-secondary">了解更多</a>
         </div>
       </div>
       <div class="about-image">
-        <img :src="avatarImage" alt="柯柯头像" class="avatar-image" />
+        <img :src="avatarImage" alt="柯柯头像" class="avatar-image" loading="lazy" decoding="async" />
       </div>
     </div>
   </section>
@@ -51,15 +50,14 @@
 
 <script setup>
 import avatarImage from '../assets/images/avatar.jpg'
-import ThemeSwitcher from './ThemeSwitcher.vue'
 </script>
 
 <style scoped>
 .about {
-  background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-card) 50%, var(--bg-darker) 100%);
-  color: var(--text-dark);
+  background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 50%, var(--bg-darker) 100%);
+  color: white;
   padding: 100px 0;
-  border-bottom: 1px solid rgba(var(--primary-color-rgb), 0.2);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -71,7 +69,7 @@ import ThemeSwitcher from './ThemeSwitcher.vue'
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(var(--primary-color-rgb), 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
   animation: rotate 20s linear infinite;
 }
 
@@ -210,12 +208,12 @@ import ThemeSwitcher from './ThemeSwitcher.vue'
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: var(--bg-darker);
   border: none;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
 }
 
 .btn-secondary {
@@ -225,8 +223,8 @@ import ThemeSwitcher from './ThemeSwitcher.vue'
 }
 
 .btn-secondary:hover {
-  background-color: rgba(0, 240, 255, 0.1);
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  background-color: rgba(99, 102, 241, 0.1);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
 }
 
 .about-image {
@@ -241,16 +239,16 @@ import ThemeSwitcher from './ThemeSwitcher.vue'
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--primary-color);
-  box-shadow: 0 0 40px rgba(0, 240, 255, 0.4), 0 0 80px rgba(123, 44, 191, 0.2);
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.4), 0 0 80px rgba(236, 72, 153, 0.2);
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 40px rgba(0, 240, 255, 0.4), 0 0 80px rgba(123, 44, 191, 0.2);
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.4), 0 0 80px rgba(236, 72, 153, 0.2);
   }
   50% {
-    box-shadow: 0 0 60px rgba(0, 240, 255, 0.6), 0 0 100px rgba(123, 44, 191, 0.3);
+    box-shadow: 0 0 60px rgba(99, 102, 241, 0.6), 0 0 100px rgba(236, 72, 153, 0.3);
   }
 }
 

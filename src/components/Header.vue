@@ -55,10 +55,10 @@ const closeMenu = () => {
 
 <style scoped>
 .header {
-  background-color: rgba(10, 14, 39, 0.95);
+  background-color: rgba(17, 24, 39, 0.95);
   backdrop-filter: blur(20px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
   position: sticky;
   top: 0;
   z-index: 1000;

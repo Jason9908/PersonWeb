@@ -66,7 +66,7 @@
   right: -20%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
   border-radius: 50%;
   filter: blur(60px);
   animation: float 8s ease-in-out infinite;
@@ -79,7 +79,7 @@
   left: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
   border-radius: 50%;
   filter: blur(60px);
   animation: float 10s ease-in-out infinite reverse;
@@ -106,7 +106,7 @@
 }
 
 .greeting {
-  color: #7c3aed;
+  color: var(--primary-color);
   font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
@@ -120,20 +120,20 @@
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #fff 0%, #00d4ff 50%, #7c3aed 100%);
+  background: linear-gradient(135deg, #fff 0%, var(--secondary-color) 50%, var(--primary-color) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .title {
-  color: #a0a0a0;
+  color: var(--text-light);
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
 }
 
 .description {
-  color: #808080;
+  color: var(--text-light);
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 2.5rem;
@@ -156,14 +156,14 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #7c3aed 0%, #00d4ff 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: #fff;
   border: none;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
 }
 
 .btn-secondary {
@@ -173,8 +173,8 @@
 }
 
 .btn-secondary:hover {
-  border-color: #7c3aed;
-  background: rgba(124, 58, 237, 0.1);
+  border-color: var(--primary-color);
+  background: rgba(99, 102, 241, 0.1);
 }
 
 .hero-visual {
