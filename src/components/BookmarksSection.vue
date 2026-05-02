@@ -411,10 +411,12 @@ const totalCount = computed(() => {
   list-style: none;
   padding: 0;
   margin: 0;
+  pointer-events: auto;
 }
 
 .bookmark-item {
   margin-bottom: 0.75rem;
+  pointer-events: auto;
 }
 
 .bookmark-item:last-child {
@@ -431,6 +433,10 @@ const totalCount = computed(() => {
   border: 1px solid rgba(0, 240, 255, 0.1);
   transition: all 0.3s ease;
   text-decoration: none;
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .bookmark-link:hover {
