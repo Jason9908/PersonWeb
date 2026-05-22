@@ -56,6 +56,9 @@
                 <span class="fallback-text">微信</span>
               </div>
             </div>
+            <button class="copy-wechat-btn" @click="copyWechat" title="点击复制微信号">
+              {{ wechatCopied ? '已复制 ✓' : '复制微信号' }}
+            </button>
           </div>
         </div>
       </div>
@@ -115,6 +118,30 @@ const imageErrors = reactive({
 const handleImageError = (imageType, event) => {
   console.error(`图片加载失败: ${imageType}`, event)
   imageErrors[imageType] = true
+}
+
+const wechatCopied = ref(false)
+
+const copyWechat = async () => {
+  try {
+    await navigator.clipboard.writeText('Jasonakeke9908')
+    wechatCopied.value = true
+    setTimeout(() => {
+      wechatCopied.value = false
+    }, 2000)
+  } catch (err) {
+    // 复制失败，提供微信号文本
+    const input = document.createElement('input')
+    input.value = 'Jasonakeke9908'
+    document.body.appendChild(input)
+    input.select()
+    document.execCommand('copy')
+    document.body.removeChild(input)
+    wechatCopied.value = true
+    setTimeout(() => {
+      wechatCopied.value = false
+    }, 2000)
+  }
 }
 
 const handleSubmit = async () => {
@@ -302,6 +329,25 @@ const handleSubmit = async () => {
   font-size: 1rem;
   color: var(--text-dark);
   font-weight: 600;
+}
+
+.copy-wechat-btn {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.copy-wechat-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
 }
 
 .contact-form-wrapper {
