@@ -476,10 +476,11 @@ const totalCount = computed(() => {
   font-size: 0.8rem;
   color: var(--text-light);
   transition: color 0.3s ease;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .bookmark-arrow {

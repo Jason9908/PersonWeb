@@ -42,14 +42,28 @@
         </div>
       </div>
       <div class="about-image">
-        <img :src="avatarImage" alt="柯柯头像" class="avatar-image" loading="lazy" decoding="async" />
+        <img 
+          :src="avatarImage" 
+          alt="柯柯头像" 
+          class="avatar-image" 
+          loading="lazy" 
+          decoding="async"
+          @error="handleImageError"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import avatarImage from '../assets/images/avatar.jpg'
+
+const imageError = ref(false)
+const handleImageError = (e) => {
+  console.error('头像加载失败')
+  imageError.value = true
+}
 </script>
 
 <style scoped>
