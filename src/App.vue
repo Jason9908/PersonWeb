@@ -52,9 +52,9 @@ const progress = ref(0)
 onMounted(() => {
   const progressInterval = setInterval(() => {
     if (progress.value < 90) {
-      progress.value += Math.random() * 15
+      progress.value += Math.random() * 25
     }
-  }, 200)
+  }, 80)
 
   window.addEventListener('load', () => {
     completeLoading()
@@ -62,14 +62,14 @@ onMounted(() => {
 
   setTimeout(() => {
     completeLoading()
-  }, 2500)
+  }, 1200)
 
   function completeLoading() {
     clearInterval(progressInterval)
     progress.value = 100
     setTimeout(() => {
       isLoading.value = false
-    }, 300)
+    }, 200)
   }
 })
 </script>
